@@ -6,6 +6,7 @@ The Gramps Project ( https://gramps-project.org )
 
 We strive to produce a genealogy program that is both intuitive for hobbyists and feature-complete for professional genealogists.
 
+This is my test change
 Please read the **COPYING** file first.
 
 Please read the **INSTALL** file if you intend to build from source.
