@@ -161,6 +161,27 @@ plg.report_modes = [REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI]
 
 # ------------------------------------------------------------------------
 #
+# Detailed Descendant Report aangepast
+#
+# ------------------------------------------------------------------------
+
+plg = newplugin()
+plg.id = "det_descendant_report_tng"
+plg.name = _("TNG Detailed Descendant Report")
+plg.description = _("Produces a detailed descendant report")
+plg.version = "0.1"
+plg.gramps_target_version = MODULE_VERSION
+plg.status = STABLE
+plg.fname = "tngdetdescendantreport.py"
+plg.ptype = REPORT
+plg.authors = ["Bruce DeGrasse, Eugene Dubois"]
+plg.authors_email = ["bdegrasse1@attbi.com, eugene@thenakedgenealogist.com"]
+plg.category = CATEGORY_TEXT
+plg.reportclass = "TNGDetDescendantReport"
+plg.optionclass = "TNGDetDescendantOptions"
+plg.report_modes = [REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI]
+# ------------------------------------------------------------------------
+#
 # End of Line Report
 #
 # ------------------------------------------------------------------------
