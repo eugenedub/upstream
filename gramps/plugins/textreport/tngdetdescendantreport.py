@@ -72,7 +72,7 @@ from gramps.gen.plug.report import endnotes
 from gramps.gen.plug.report import utils
 from gramps.gen.plug.report import MenuReportOptions
 from gramps.gen.plug.report import stdoptions
-from gramps.plugins.lib.libnarrate import Narrator
+from gramps.tng.tngnarrate import Narrator
 from gramps.gen.display.place import displayer as _pd
 from gramps.gen.display.name import displayer as _nd
 from gramps.gen.proxy import CacheProxyDb
@@ -752,11 +752,16 @@ class TNGDetDescendantReport(Report):
             if self.want_ids:
                 self.doc.write_text("(%s) " % child.get_gramps_id())
             self.__narrator.set_subject(child)
+            # split the strings, so we can add the extra witnesses information,
+            # from the notes or description
             self.doc.write_text_citation(
-                self.__narrator.get_born_string()
-                or self.__narrator.get_christened_string()
-                or self.__narrator.get_baptised_string()
-            )
+                self.__narrator.get_born_string())
+            self.doc.write_text_citation(
+                self.__narrator.get_christened_string()
+                )
+            self.doc.write_text_citation(
+                self.__narrator.get_baptised_string()
+                )
             # Write Death and/or Burial text only if not probably alive
             if not probably_alive(child, self.database):
                 self.doc.write_text_citation(
