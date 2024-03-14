@@ -76,6 +76,7 @@ from gramps.tng.tngnarrate import Narrator
 from gramps.gen.display.place import displayer as _pd
 from gramps.gen.display.name import displayer as _nd
 from gramps.gen.proxy import CacheProxyDb
+from gramps.gen.plug.docgen import textdoc
 
 # ------------------------------------------------------------------------
 #
@@ -201,6 +202,9 @@ class TNGDetDescendantReport(Report):
         self.dnumber = {}
         self.dmates = {}
         self.numbers_printed = list()
+
+        # i want to check if main person or mate is being printed
+        self.mainperson = True
 
         if blankdate:
             empty_date = EMPTY_ENTRY
@@ -338,6 +342,17 @@ class TNGDetDescendantReport(Report):
                     self.dnumber[person_handle] = mod_reg_number
                     mod_reg_number += 1
 
+    def apply_none_filter(self, person_handle):
+        """No Numbering"""
+        self.apply_mod_reg_filter_aux(person_handle, 1, 1)
+        mod_reg_number = 1
+        for keys in self.gen_keys:
+            for key in keys:
+                person_handle = self.map[key]
+                if person_handle not in self.dnumber:
+                    self.dnumber[person_handle] = mod_reg_number
+                    mod_reg_number += 1
+
     def write_report(self):
         """
         This function is called by the report system and writes the report.
@@ -350,6 +365,8 @@ class TNGDetDescendantReport(Report):
             self.apply_daboville_filter(self.center_person.get_handle(), 1, "1")
         elif self.numbering == "Record (Modified Register)":
             self.apply_mod_reg_filter(self.center_person.get_handle())
+        elif self.numbering == "None":
+            self.apply_none_filter(self.center_person.get_handle())
         else:
             raise AttributeError("no such numbering: '%s'" % self.numbering)
 
@@ -446,7 +463,11 @@ class TNGDetDescendantReport(Report):
 
         person_handle = self.map[key]
         person = self._db.get_person_from_handle(person_handle)
-
+        
+        listlen = len(person.get_family_handle_list())
+        if listlen == 0:
+            return
+         
         val = self.dnumber[person_handle]
 
         if val in self.numbers_printed:
@@ -475,9 +496,9 @@ class TNGDetDescendantReport(Report):
             self.write_path(person)
 
         self.doc.end_paragraph()
-
+        self.mainperson = True 
         self.write_person_info(person)
-
+        self.mainperson = False
         if (
             self.inc_mates
             or self.listchildren
@@ -733,18 +754,18 @@ class TNGDetDescendantReport(Report):
             else:
                 prefix = ""
 
-            if child_handle in self.dnumber:
+            if child_handle in self.dnumber and self.numbering != "None":
                 self.doc.start_paragraph(
                     "DDR-ChildList",
                     prefix
                     + str(self.dnumber[child_handle])
-                    + " "
-                    + utils.roman(cnt).lower()
-                    + ".",
+#                    + " "
+#                    + str(cnt)
+#                    + ".",
                 )
             else:
                 self.doc.start_paragraph(
-                    "DDR-ChildList", prefix + utils.roman(cnt).lower() + "."
+                    "DDR-ChildList", prefix + str(cnt) + "."
                 )
             cnt += 1
 
@@ -762,6 +783,11 @@ class TNGDetDescendantReport(Report):
             self.doc.write_text_citation(
                 self.__narrator.get_baptised_string()
                 )
+#            self.doc.start_bold()
+            self.doc.write_text_citation(
+                self.__narrator.get_witnesses_string()
+                )
+#            self.doc.end_bold()
             # Write Death and/or Burial text only if not probably alive
             if not probably_alive(child, self.database):
                 self.doc.write_text_citation(
@@ -804,9 +830,10 @@ class TNGDetDescendantReport(Report):
             for notehandle in notelist:
                 note = self._db.get_note_from_handle(notehandle)
                 self.doc.write_styled_note(
-                    note.get_styledtext(), note.get_format(), "DDR-Entry"
+                    note.get_styledtext(), note.get_format(), "DDR-Note"
                 )
 
+            
     def __write_family_events(self, family):
         """
         List the events for the given family.
@@ -907,7 +934,9 @@ class TNGDetDescendantReport(Report):
 
         if self.verbose:
             self.__write_parents(person)
-        self.write_marriage(person)
+        if self.mainperson != False:
+            self.write_marriage(person)
+
         self.doc.end_paragraph()
 
         notelist = person.get_note_list()
@@ -921,7 +950,7 @@ class TNGDetDescendantReport(Report):
                 self.doc.write_styled_note(
                     note.get_styledtext(),
                     note.get_format(),
-                    "DDR-Entry",
+                    "DDR-Note",
                     contains_html=(note.get_type() == NoteType.HTML_CODE),
                 )
 
@@ -1063,6 +1092,7 @@ class TNGDetDescendantOptions(MenuReportOptions):
                     "Record (Modified Register)",
                     _("Record (Modified Register) numbering"),
                 ),
+                ("None", _("No numbering system")),
             ]
         )
         numbering.set_help(_("The numbering system to be used"))
@@ -1266,6 +1296,15 @@ class TNGDetDescendantOptions(MenuReportOptions):
         default_style.add_paragraph_style("DDR-ChildList", para)
 
         font = FontStyle()
+        font.set(size=10, italic=1)
+        para = ParagraphStyle()
+        para.set_font(font)
+        para.set_top_margin(0.125)
+        para.set_bottom_margin(0.125)
+        para.set_description(_("The style used for witnesses in childrens lists."))
+        default_style.add_paragraph_style("DDR-Witness", para)
+
+        font = FontStyle()
         font.set(face=FONT_SANS_SERIF, size=10, italic=0, bold=1)
         para = ParagraphStyle()
         para.set_font(font)
@@ -1274,18 +1313,28 @@ class TNGDetDescendantOptions(MenuReportOptions):
         para.set_bottom_margin(0.25)
         para.set_description(_("The style used for the note header."))
         default_style.add_paragraph_style("DDR-NoteHeader", para)
+    
+        font = FontStyle()
+        font.set(face=FONT_SERIF, size=8, italic=0, bold=0)
+        para = ParagraphStyle()
+        para.set_font(font)
+        para.set(first_indent=0.0, lmargin=1.5)
+        para.set_top_margin(0)
+        para.set_bottom_margin(0.0)
+        para.set_description(_("The style used for the notes."))
+        default_style.add_paragraph_style("DDR-Note", para)
 
         para = ParagraphStyle()
         para.set(lmargin=1.5)
-        para.set_top_margin(0.25)
-        para.set_bottom_margin(0.25)
+        para.set_top_margin(0.1)
+        para.set_bottom_margin(0.0)
         para.set_description(_("The basic style used for the text display."))
         default_style.add_paragraph_style("DDR-Entry", para)
 
         para = ParagraphStyle()
         para.set(first_indent=-1.5, lmargin=1.5)
         para.set_top_margin(0.25)
-        para.set_bottom_margin(0.25)
+        para.set_bottom_margin(0.0)
         para.set_description(_("The style used for first level headings."))
         default_style.add_paragraph_style("DDR-First-Entry", para)
 
@@ -1295,7 +1344,7 @@ class TNGDetDescendantOptions(MenuReportOptions):
         para.set_font(font)
         para.set(first_indent=0.0, lmargin=1.5)
         para.set_top_margin(0.25)
-        para.set_bottom_margin(0.25)
+        para.set_bottom_margin(0.0)
         para.set_description(_("The style used for second level headings."))
         default_style.add_paragraph_style("DDR-MoreHeader", para)
 
@@ -1305,7 +1354,7 @@ class TNGDetDescendantOptions(MenuReportOptions):
         para.set_font(font)
         para.set(first_indent=0.0, lmargin=1.5)
         para.set_top_margin(0.25)
-        para.set_bottom_margin(0.25)
+        para.set_bottom_margin(0.0)
         para.set_description(_("The style used for details."))
         default_style.add_paragraph_style("DDR-MoreDetails", para)
 

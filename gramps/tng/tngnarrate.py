@@ -2211,7 +2211,6 @@ class Narrator:
             text = baptised_no_date_no_place[gender][name_index]
         else:  # male, no date, no place
             text = baptised_no_date_no_place["succinct"]
-        note = self.get_baptism_notes()
         if text:
             text = self.__translate_text(text) % value_map
             text = text + " "
@@ -2219,31 +2218,30 @@ class Narrator:
         if text:
             text = self.__translate_text(text) % value_map
             text = text + " "
-            if note:
-                text = text + "{" + str(note.get_styledtext()) + ".} "
         if event.get_description():
             if text:
                 text += ". "
             text += event.get_description()
         return text
     
-    def get_baptism_notes(self):
-        baptism = None
+    def get_witnesses_string(self):
+        witnesses = None
         for event_ref in self.__person.get_event_ref_list():
             event = self.__db.get_event_from_handle(event_ref.ref)
-            if event and event.type.value == EventType.BAPTISM \
+            if event and (event.type.value == EventType.BAPTISM \
+                    or event.type.value == EventType.CHRISTEN) \
                     and event_ref.role.value == EventRoleType.PRIMARY:
-                baptism = event
+                witnesses = event
                 break
-
-        if baptism:
+        if witnesses:
             note = ""
-            notelist = baptism.get_note_list()
+            notelist = witnesses.get_note_list()
             for notehandle in notelist:
                 note = self.__db.get_note_from_handle(notehandle)
                 break
             if note:
-                return note
+                text = "{Get: " + str(note.get_styledtext()) + ".} "
+                return text
             else:
                 return None
 
@@ -2381,14 +2379,10 @@ class Narrator:
             text = christened_no_date_no_place[gender][name_index]
         else:  # male, no date, no place
             text = christened_no_date_no_place["succinct"]
-        note = self.get_christening_notes()
         if text:
             text = self.__translate_text(text) % value_map
             text = text + " "
-            if note:
-                text = text + "{" + str(note.get_styledtext()) + ".} "
-
-        return text
+            return text
     
     def get_married_string(self, family, is_first=True, name_display=None):
         """
