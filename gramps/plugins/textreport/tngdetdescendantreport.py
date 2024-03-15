@@ -506,10 +506,14 @@ class TNGDetDescendantReport(Report):
             or self.inc_events
             or self.inc_attrs
         ):
+            """
             for family_handle in person.get_family_handle_list():
                 family = self._db.get_family_from_handle(family_handle)
                 if self.inc_mates:
                     self.__write_mate(person, family)
+            """
+            for family_handle in person.get_family_handle_list():
+                family = self._db.get_family_from_handle(family_handle)
                 if self.listchildren:
                     self.__write_children(family)
                 if self.inc_notes:
@@ -616,19 +620,23 @@ class TNGDetDescendantReport(Report):
             else:
                 father_name = ""
                 father_mark = ""
-            text = self.__narrator.get_child_string(father_name, mother_name)
+            text = self.__narrator.get_child_string(father_name, mother_name, person.get_gender())
+            self.doc.start_paragraph("DDR-Entry")
             if text:
+                print(str(text))
                 self.doc.write_text(text)
                 if father_mark:
                     self.doc.write_text("", father_mark)
                 if mother_mark:
                     self.doc.write_text("", mother_mark)
+            self.doc.end_paragraph()
 
     def write_marriage(self, person):
         """
         Output marriage sentence.
         """
         is_first = True
+        self.mainperson = False
         for family_handle in person.get_family_handle_list():
             family = self._db.get_family_from_handle(family_handle)
             spouse_handle = utils.find_spouse(person, family)
@@ -641,11 +649,14 @@ class TNGDetDescendantReport(Report):
             text = self.__narrator.get_married_string(
                 family, is_first, self._name_display
             )
+            self.doc.start_paragraph("DDR-Entry")
             if text:
                 self.doc.write_text_citation(text, spouse_mark)
                 if self.want_ids:
                     self.doc.write_text("(%s)" % family.get_gramps_id())
                 is_first = False
+            self.doc.end_paragraph()
+            self.__write_mate(person, family)
 
     def __write_mate(self, person, family):
         """
@@ -655,10 +666,27 @@ class TNGDetDescendantReport(Report):
             mate_handle = family.get_mother_handle()
         else:
             mate_handle = family.get_father_handle()
-
+        
         if mate_handle:
-            mate = self._db.get_person_from_handle(mate_handle)
+            
+            person = self._db.get_person_from_handle(mate_handle)
+            self.__write_parents(person)
+            self.doc.start_paragraph("DDR-Entry")
+            text = ""
+            text = self.__narrator.get_born_string(person)
+            text = text + self.__narrator.get_baptised_string()
+            text = text + self.__narrator.get_christened_string()
 
+            # Write Death and/or Burial text only if not probably alive
+            if not probably_alive(person, self.database):
+                text = text + self.__narrator.get_died_string()
+                text = text + self.__narrator.get_buried_string()
+            print("mate text: " + text)
+            if text:
+                self.doc.write_text_citation(text)
+            self.doc.end_paragraph()
+            
+        """
             self.doc.start_paragraph("DDR-MoreHeader")
             name = self._name_display.display(mate)
             if not name:
@@ -674,23 +702,8 @@ class TNGDetDescendantReport(Report):
             if self.want_ids:
                 self.doc.write_text(" (%s)" % mate.get_gramps_id())
             self.doc.end_paragraph()
-
-            if not self.inc_materef:
-                # Don't want to just print reference
-                self.write_person_info(mate)
-            else:
-                # Check to see if we've married a cousin
-                if mate_handle in self.dnumber:
-                    self.doc.start_paragraph("DDR-MoreDetails")
-                    self.doc.write_text_citation(
-                        self._("Ref: %(number)s. %(name)s")
-                        % {"number": self.dnumber[mate_handle], "name": name}
-                    )
-                    self.doc.end_paragraph()
-                else:
-                    self.dmates[mate_handle] = person.get_handle()
-                    self.write_person_info(mate)
-
+                       
+        """
     def __get_mate_names(self, family):
         """get the names of the parents in a family"""
         mother_handle = family.get_mother_handle()
@@ -710,8 +723,14 @@ class TNGDetDescendantReport(Report):
                 father_name = self._("Unknown")
         else:
             father_name = self._("Unknown")
-
+        
         return mother_name, father_name
+    
+    def __get_relation_type(self, family):
+        """Get the type of relationship"""
+        relationship_type = family.get_relationship()
+        return relationship_type
+
 
     def __write_children(self, family):
         """
@@ -724,10 +743,15 @@ class TNGDetDescendantReport(Report):
 
         mother_name, father_name = self.__get_mate_names(family)
 
+        relation_type = str(self.__get_relation_type(family))
+
         self.doc.start_paragraph("DDR-ChildTitle")
+        if relation_type == "Married":
+            children_header = "Uit het huwelijk van " + father_name + " met " + mother_name + ":"
+        else:
+            children_header = "Uit de relatie van " + father_name + " met " + mother_name + ":" 
         self.doc.write_text(
-            self._("Children of %(mother_name)s and %(father_name)s")
-            % {"father_name": father_name, "mother_name": mother_name}
+            self._(children_header)            
         )
         self.doc.end_paragraph()
 
@@ -905,16 +929,18 @@ class TNGDetDescendantReport(Report):
             photo = plist[0]
             utils.insert_image(self._db, self.doc, photo, self._user)
 
-        self.doc.start_paragraph("DDR-Entry")
+        
 
         if not self.verbose:
             self.__write_parents(person)
+        self.doc.start_paragraph("DDR-Entry")
 
         text = self.__narrator.get_born_string()
         if text:
             self.doc.write_text_citation(text)
 
         text = self.__narrator.get_baptised_string()
+
         if text:
             self.doc.write_text_citation(text)
 
@@ -931,13 +957,13 @@ class TNGDetDescendantReport(Report):
             text = self.__narrator.get_buried_string()
             if text:
                 self.doc.write_text_citation(text)
-
+        self.doc.end_paragraph()
         if self.verbose:
             self.__write_parents(person)
         if self.mainperson != False:
             self.write_marriage(person)
 
-        self.doc.end_paragraph()
+ 
 
         notelist = person.get_note_list()
         if len(notelist) > 0 and self.inc_notes:
@@ -1276,12 +1302,12 @@ class TNGDetDescendantOptions(MenuReportOptions):
         default_style.add_paragraph_style("DDR-Generation", para)
 
         font = FontStyle()
-        font.set(face=FONT_SANS_SERIF, size=10, italic=0, bold=1)
+        font.set(size=10)
         para = ParagraphStyle()
         para.set_font(font)
         para.set_left_margin(1.5)  # in centimeters
         para.set_top_margin(0.25)
-        para.set_bottom_margin(0.25)
+        para.set_bottom_margin(0)
         para.set_description(_("The style used for the children list title."))
         default_style.add_paragraph_style("DDR-ChildTitle", para)
 

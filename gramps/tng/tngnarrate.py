@@ -116,9 +116,9 @@ born_full_date_with_place = [
         ),
     },
     {
-        Person.UNKNOWN: _("This person was born on %(birth_date)s in %(birth_place)s."),
-        Person.MALE: _("He was born on %(birth_date)s in %(birth_place)s."),
-        Person.FEMALE: _("She was born on %(birth_date)s in %(birth_place)s."),
+        Person.UNKNOWN: _("Deze persoon was born on %(birth_date)s in %(birth_place)s."),
+        Person.MALE: _("Hij was born on %(birth_date)s in %(birth_place)s."),
+        Person.FEMALE: _("Zij was born on %(birth_date)s in %(birth_place)s."),
     },
     _("Born %(birth_date)s in %(birth_place)s."),
 ]
@@ -134,9 +134,9 @@ born_modified_date_with_place = [
         ),
     },
     {
-        Person.UNKNOWN: _("This person was born %(modified_date)s in %(birth_place)s."),
-        Person.MALE: _("He was born %(modified_date)s in %(birth_place)s."),
-        Person.FEMALE: _("She was born %(modified_date)s in %(birth_place)s."),
+        Person.UNKNOWN: _("Deze persoon was born %(modified_date)s in %(birth_place)s."),
+        Person.MALE: _("Hij was born %(modified_date)s in %(birth_place)s."),
+        Person.FEMALE: _("Zij was born %(modified_date)s in %(birth_place)s."),
     },
     _("Born %(modified_date)s in %(birth_place)s."),
 ]
@@ -148,9 +148,9 @@ born_full_date_no_place = [
         Person.FEMALE: _("%(female_name)s was born on %(birth_date)s."),
     },
     {
-        Person.UNKNOWN: _("This person was born on %(birth_date)s."),
-        Person.MALE: _("He was born on %(birth_date)s."),
-        Person.FEMALE: _("She was born on %(birth_date)s."),
+        Person.UNKNOWN: _("Deze persoon was born on %(birth_date)s."),
+        Person.MALE: _("Hij was born on %(birth_date)s."),
+        Person.FEMALE: _("Zij was born on %(birth_date)s."),
     },
     _("Born %(birth_date)s."),
 ]
@@ -162,9 +162,9 @@ born_modified_date_no_place = [
         Person.FEMALE: _("%(female_name)s was born %(modified_date)s."),
     },
     {
-        Person.UNKNOWN: _("This person was born %(modified_date)s."),
-        Person.MALE: _("He was born %(modified_date)s."),
-        Person.FEMALE: _("She was born %(modified_date)s."),
+        Person.UNKNOWN: _("Deze persoon was born %(modified_date)s."),
+        Person.MALE: _("Hij was born %(modified_date)s."),
+        Person.FEMALE: _("Zij was born %(modified_date)s."),
     },
     _("Born %(modified_date)s."),
 ]
@@ -180,9 +180,9 @@ born_partial_date_with_place = [
         ),
     },
     {
-        Person.UNKNOWN: _("This person was born in %(month_year)s in %(birth_place)s."),
-        Person.MALE: _("He was born in %(month_year)s in %(birth_place)s."),
-        Person.FEMALE: _("She was born in %(month_year)s in %(birth_place)s."),
+        Person.UNKNOWN: _("Deze persoon was born in %(month_year)s in %(birth_place)s."),
+        Person.MALE: _("Hij was born in %(month_year)s in %(birth_place)s."),
+        Person.FEMALE: _("Zij was born in %(month_year)s in %(birth_place)s."),
     },
     _("Born %(month_year)s in %(birth_place)s."),
 ]
@@ -194,9 +194,9 @@ born_partial_date_no_place = [
         Person.FEMALE: _("%(female_name)s was born in %(month_year)s."),
     },
     {
-        Person.UNKNOWN: _("This person was born in %(month_year)s."),
-        Person.MALE: _("He was born in %(month_year)s."),
-        Person.FEMALE: _("She was born in %(month_year)s."),
+        Person.UNKNOWN: _("Deze persoon was born in %(month_year)s."),
+        Person.MALE: _("Hij was born in %(month_year)s."),
+        Person.FEMALE: _("Zij was born in %(month_year)s."),
     },
     _("Born %(month_year)s."),
 ]
@@ -208,9 +208,9 @@ born_no_date_with_place = [
         Person.FEMALE: _("%(female_name)s was born in %(birth_place)s."),
     },
     {
-        Person.UNKNOWN: _("This person was born in %(birth_place)s."),
-        Person.MALE: _("He was born in %(birth_place)s."),
-        Person.FEMALE: _("She was born in %(birth_place)s."),
+        Person.UNKNOWN: _("Deze persoon was born in %(birth_place)s."),
+        Person.MALE: _("Hij was born in %(birth_place)s."),
+        Person.FEMALE: _("Zij was born in %(birth_place)s."),
     },
     _("Born in %(birth_place)s."),
 ]
@@ -223,269 +223,269 @@ born_no_date_with_place = [
 died_full_date_with_place = [
     {
         Person.UNKNOWN: [
-            _("%(unknown_gender_name)s died on %(death_date)s in %(death_place)s."),
+            _("%(unknown_gender_name)s overleed op %(death_date)s te %(death_place)s."),
             _(
-                "%(unknown_gender_name)s died on %(death_date)s in %(death_place)s at the age of %(age)s."
+                "%(unknown_gender_name)s overleed op %(death_date)s te %(death_place)s %(age)s jaar oud."
             ),
         ],
         Person.MALE: [
-            _("%(male_name)s died on %(death_date)s in %(death_place)s."),
+            _("%(male_name)s overleed op %(death_date)s te %(death_place)s."),
             _(
-                "%(male_name)s died on %(death_date)s in %(death_place)s at the age of %(age)s."
+                "%(male_name)s overleed op %(death_date)s te %(death_place)s %(age)s jaar oud."
             ),
         ],
         Person.FEMALE: [
-            _("%(female_name)s died on %(death_date)s in %(death_place)s."),
+            _("%(female_name)s overleed op %(death_date)s te %(death_place)s."),
             _(
-                "%(female_name)s died on %(death_date)s in %(death_place)s at the age of %(age)s."
+                "%(female_name)s overleed op %(death_date)s te %(death_place)s %(age)s jaar oud."
             ),
         ],
     },
     {
         Person.UNKNOWN: [
-            _("This person died on %(death_date)s in %(death_place)s."),
+            _("Deze persoon overleed op %(death_date)s te %(death_place)s."),
             _(
-                "This person died on %(death_date)s in %(death_place)s at the age of %(age)s."
+                "Deze persoon overleed op %(death_date)s te %(death_place)s %(age)s jaar oud."
             ),
         ],
         Person.MALE: [
-            _("He died on %(death_date)s in %(death_place)s."),
-            _("He died on %(death_date)s in %(death_place)s at the age of %(age)s."),
+            _("Hij overleed op %(death_date)s te %(death_place)s."),
+            _("Hij overleed op %(death_date)s te %(death_place)s %(age)s jaar oud."),
         ],
         Person.FEMALE: [
-            _("She died on %(death_date)s in %(death_place)s."),
-            _("She died on %(death_date)s in %(death_place)s at the age of %(age)s."),
+            _("Zij overleed op %(death_date)s te %(death_place)s."),
+            _("Zij overleed op %(death_date)s te %(death_place)s %(age)s jaar oud."),
         ],
     },
     [
-        _("Died %(death_date)s in %(death_place)s."),
-        _("Died %(death_date)s in %(death_place)s (%(age)s)."),
+        _("Overleed %(death_date)s te %(death_place)s."),
+        _("Overleed %(death_date)s te %(death_place)s (%(age)s)."),
     ],
 ]
 
 died_modified_date_with_place = [
     {
         Person.UNKNOWN: [
-            _("%(unknown_gender_name)s died %(death_date)s in %(death_place)s."),
+            _("%(unknown_gender_name)s overleed %(death_date)s te %(death_place)s."),
             _(
-                "%(unknown_gender_name)s died %(death_date)s in %(death_place)s at the age of %(age)s."
+                "%(unknown_gender_name)s overleed %(death_date)s te %(death_place)s %(age)s jaar oud."
             ),
         ],
         Person.MALE: [
-            _("%(male_name)s died %(death_date)s in %(death_place)s."),
+            _("%(male_name)s overleed %(death_date)s te %(death_place)s."),
             _(
-                "%(male_name)s died %(death_date)s in %(death_place)s at the age of %(age)s."
+                "%(male_name)s overleed %(death_date)s te %(death_place)s %(age)s jaar oud."
             ),
         ],
         Person.FEMALE: [
-            _("%(female_name)s died %(death_date)s in %(death_place)s."),
+            _("%(female_name)s overleed %(death_date)s te %(death_place)s."),
             _(
-                "%(female_name)s died %(death_date)s in %(death_place)s at the age of %(age)s."
+                "%(female_name)s overleed %(death_date)s te %(death_place)s %(age)s jaar oud."
             ),
         ],
     },
     {
         Person.UNKNOWN: [
-            _("This person died %(death_date)s in %(death_place)s."),
+            _("Deze persoon overleed %(death_date)s te %(death_place)s."),
             _(
-                "This person died %(death_date)s in %(death_place)s at the age of %(age)s."
+                "Deze persoon overleed %(death_date)s te %(death_place)s %(age)s jaar oud."
             ),
         ],
         Person.MALE: [
-            _("He died %(death_date)s in %(death_place)s."),
-            _("He died %(death_date)s in %(death_place)s at the age of %(age)s."),
+            _("Hij overleed %(death_date)s te %(death_place)s."),
+            _("Hij overleed %(death_date)s te %(death_place)s %(age)s jaar oud."),
         ],
         Person.FEMALE: [
-            _("She died %(death_date)s in %(death_place)s."),
-            _("She died %(death_date)s in %(death_place)s at the age of %(age)s."),
+            _("Zij overleed %(death_date)s te %(death_place)s."),
+            _("Zij overleed %(death_date)s te %(death_place)s %(age)s jaar oud."),
         ],
     },
     [
-        _("Died %(death_date)s in %(death_place)s."),
-        _("Died %(death_date)s in %(death_place)s (%(age)s)."),
+        _("Overleed %(death_date)s te %(death_place)s."),
+        _("Overleed %(death_date)s te %(death_place)s (%(age)s)."),
     ],
 ]
 
 died_full_date_no_place = [
     {
         Person.UNKNOWN: [
-            _("%(unknown_gender_name)s died on %(death_date)s."),
-            _("%(unknown_gender_name)s died on %(death_date)s at the age of %(age)s."),
+            _("%(unknown_gender_name)s overleed op %(death_date)s."),
+            _("%(unknown_gender_name)s overleed op %(death_date)s %(age)s jaar oud."),
         ],
         Person.MALE: [
-            _("%(male_name)s died on %(death_date)s."),
-            _("%(male_name)s died on %(death_date)s at the age of %(age)s."),
+            _("%(male_name)s overleed op %(death_date)s."),
+            _("%(male_name)s overleed op %(death_date)s %(age)s jaar oud."),
         ],
         Person.FEMALE: [
-            _("%(female_name)s died on %(death_date)s."),
-            _("%(female_name)s died on %(death_date)s at the age of %(age)s."),
+            _("%(female_name)s overleed op %(death_date)s."),
+            _("%(female_name)s overleed op %(death_date)s %(age)s jaar oud."),
         ],
     },
     {
         Person.UNKNOWN: [
-            _("This person died on %(death_date)s."),
-            _("This person died on %(death_date)s at the age of %(age)s."),
+            _("Deze persoon overleed op %(death_date)s."),
+            _("Deze persoon overleed op %(death_date)s %(age)s jaar oud."),
         ],
         Person.MALE: [
-            _("He died on %(death_date)s."),
-            _("He died on %(death_date)s at the age of %(age)s."),
+            _("Hij overleed op %(death_date)s."),
+            _("Hij overleed op %(death_date)s %(age)s jaar oud."),
         ],
         Person.FEMALE: [
-            _("She died on %(death_date)s."),
-            _("She died on %(death_date)s at the age of %(age)s."),
+            _("Zij overleed op %(death_date)s."),
+            _("Zij overleed op %(death_date)s %(age)s jaar oud."),
         ],
     },
     [
-        _("Died %(death_date)s."),
-        _("Died %(death_date)s (%(age)s)."),
+        _("Overleed %(death_date)s."),
+        _("Overleed %(death_date)s (%(age)s)."),
     ],
 ]
 
 died_modified_date_no_place = [
     {
         Person.UNKNOWN: [
-            _("%(unknown_gender_name)s died %(death_date)s."),
-            _("%(unknown_gender_name)s died %(death_date)s at the age of %(age)s."),
+            _("%(unknown_gender_name)s overleed %(death_date)s."),
+            _("%(unknown_gender_name)s overleed %(death_date)s %(age)s jaar oud."),
         ],
         Person.MALE: [
-            _("%(male_name)s died %(death_date)s."),
-            _("%(male_name)s died %(death_date)s at the age of %(age)s."),
+            _("%(male_name)s overleed %(death_date)s."),
+            _("%(male_name)s overleed %(death_date)s %(age)s jaar oud."),
         ],
         Person.FEMALE: [
-            _("%(female_name)s died %(death_date)s."),
-            _("%(female_name)s died %(death_date)s at the age of %(age)s."),
+            _("%(female_name)s overleed %(death_date)s."),
+            _("%(female_name)s overleed %(death_date)s %(age)s jaar oud."),
         ],
     },
     {
         Person.UNKNOWN: [
-            _("This person died %(death_date)s."),
-            _("This person died %(death_date)s at the age of %(age)s."),
+            _("Deze persoon overleed %(death_date)s."),
+            _("Deze persoon overleed %(death_date)s %(age)s jaar oud."),
         ],
         Person.MALE: [
-            _("He died %(death_date)s."),
-            _("He died %(death_date)s at the age of %(age)s."),
+            _("Hij overleed %(death_date)s."),
+            _("Hij overleed %(death_date)s %(age)s jaar oud."),
         ],
         Person.FEMALE: [
-            _("She died %(death_date)s."),
-            _("She died %(death_date)s at the age of %(age)s."),
+            _("Zij overleed %(death_date)s."),
+            _("Zij overleed %(death_date)s %(age)s jaar oud."),
         ],
     },
     [
-        _("Died %(death_date)s."),
-        _("Died %(death_date)s (%(age)s)."),
+        _("Overleed %(death_date)s."),
+        _("Overleed %(death_date)s (%(age)s)."),
     ],
 ]
 
 died_partial_date_with_place = [
     {
         Person.UNKNOWN: [
-            _("%(unknown_gender_name)s died in %(month_year)s in %(death_place)s."),
+            _("%(unknown_gender_name)s overleed in %(month_year)s te %(death_place)s."),
             _(
-                "%(unknown_gender_name)s died in %(month_year)s in %(death_place)s at the age of %(age)s."
+                "%(unknown_gender_name)s overleed in %(month_year)s te %(death_place)s %(age)s jaar oud."
             ),
         ],
         Person.MALE: [
-            _("%(male_name)s died in %(month_year)s in %(death_place)s."),
+            _("%(male_name)s overleed in %(month_year)s te %(death_place)s."),
             _(
-                "%(male_name)s died in %(month_year)s in %(death_place)s at the age of %(age)s."
+                "%(male_name)s overleed in %(month_year)s te %(death_place)s %(age)s jaar oud."
             ),
         ],
         Person.FEMALE: [
-            _("%(female_name)s died in %(month_year)s in %(death_place)s."),
+            _("%(female_name)s overleed in %(month_year)s te %(death_place)s."),
             _(
-                "%(female_name)s died in %(month_year)s in %(death_place)s at the age of %(age)s."
+                "%(female_name)s overleed in %(month_year)s te %(death_place)s %(age)s jaar oud."
             ),
         ],
     },
     {
         Person.UNKNOWN: [
-            _("This person died in %(month_year)s in %(death_place)s."),
+            _("Deze persoon overleed in %(month_year)s te %(death_place)s."),
             _(
-                "This person died in %(month_year)s in %(death_place)s at the age of %(age)s."
+                "Deze persoon overleed in %(month_year)s te %(death_place)s %(age)s jaar oud."
             ),
         ],
         Person.MALE: [
-            _("He died in %(month_year)s in %(death_place)s."),
-            _("He died in %(month_year)s in %(death_place)s at the age of %(age)s."),
+            _("Hij overleed in %(month_year)s te %(death_place)s."),
+            _("Hij overleed in %(month_year)s te %(death_place)s %(age)s jaar oud."),
         ],
         Person.FEMALE: [
-            _("She died in %(month_year)s in %(death_place)s."),
-            _("She died in %(month_year)s in %(death_place)s at the age of %(age)s."),
+            _("Zij overleed in %(month_year)s te %(death_place)s."),
+            _("Zij overleed in %(month_year)s te %(death_place)s %(age)s jaar oud."),
         ],
     },
     [
-        _("Died %(month_year)s in %(death_place)s."),
-        _("Died %(month_year)s in %(death_place)s (%(age)s)."),
+        _("Overleed %(month_year)s te %(death_place)s."),
+        _("Overleed %(month_year)s te %(death_place)s (%(age)s)."),
     ],
 ]
 
 died_partial_date_no_place = [
     {
         Person.UNKNOWN: [
-            _("%(unknown_gender_name)s died in %(month_year)s."),
-            _("%(unknown_gender_name)s died in %(month_year)s at the age of %(age)s."),
+            _("%(unknown_gender_name)s overleed in %(month_year)s."),
+            _("%(unknown_gender_name)s overleed in %(month_year)s %(age)s jaar oud."),
         ],
         Person.MALE: [
-            _("%(male_name)s died in %(month_year)s."),
-            _("%(male_name)s died in %(month_year)s at the age of %(age)s."),
+            _("%(male_name)s overleed in %(month_year)s."),
+            _("%(male_name)s overleed in %(month_year)s %(age)s jaar oud."),
         ],
         Person.FEMALE: [
-            _("%(female_name)s died in %(month_year)s."),
-            _("%(female_name)s died in %(month_year)s at the age of %(age)s."),
+            _("%(female_name)s overleed in %(month_year)s."),
+            _("%(female_name)s overleed in %(month_year)s %(age)s jaar oud."),
         ],
     },
     {
         Person.UNKNOWN: [
-            _("This person died in %(month_year)s."),
-            _("This person died in %(month_year)s at the age of %(age)s."),
+            _("Deze persoon overleed in %(month_year)s."),
+            _("Deze persoon overleed in %(month_year)s %(age)s jaar oud."),
         ],
         Person.MALE: [
-            _("He died in %(month_year)s."),
-            _("He died in %(month_year)s at the age of %(age)s."),
+            _("Hij overleed in %(month_year)s."),
+            _("Hij overleed in %(month_year)s %(age)s jaar oud."),
         ],
         Person.FEMALE: [
-            _("She died in %(month_year)s."),
-            _("She died in %(month_year)s at the age of %(age)s."),
+            _("Zij overleed in %(month_year)s."),
+            _("Zij overleed in %(month_year)s %(age)s jaar oud."),
         ],
     },
     [
-        _("Died %(month_year)s."),
-        _("Died %(month_year)s (%(age)s)."),
+        _("Overleed %(month_year)s."),
+        _("Overleed %(month_year)s (%(age)s)."),
     ],
 ]
 
 died_no_date_with_place = [
     {
         Person.UNKNOWN: [
-            _("%(unknown_gender_name)s died in %(death_place)s."),
-            _("%(unknown_gender_name)s died in %(death_place)s at the age of %(age)s."),
+            _("%(unknown_gender_name)s overleed te %(death_place)s."),
+            _("%(unknown_gender_name)s overleed te %(death_place)s %(age)s jaar oud."),
         ],
         Person.MALE: [
-            _("%(male_name)s died in %(death_place)s."),
-            _("%(male_name)s died in %(death_place)s at the age of %(age)s."),
+            _("%(male_name)s overleed te %(death_place)s."),
+            _("%(male_name)s overleed te %(death_place)s %(age)s jaar oud."),
         ],
         Person.FEMALE: [
-            _("%(female_name)s died in %(death_place)s."),
-            _("%(female_name)s died in %(death_place)s at the age of %(age)s."),
+            _("%(female_name)s overleed te %(death_place)s."),
+            _("%(female_name)s overleed te %(death_place)s %(age)s jaar oud."),
         ],
     },
     {
         Person.UNKNOWN: [
-            _("This person died in %(death_place)s."),
-            _("This person died in %(death_place)s at the age of %(age)s."),
+            _("Deze persoon overleed te %(death_place)s."),
+            _("Deze persoon overleed te %(death_place)s %(age)s jaar oud."),
         ],
         Person.MALE: [
-            _("He died in %(death_place)s."),
-            _("He died in %(death_place)s at the age of %(age)s."),
+            _("Hij overleed te %(death_place)s."),
+            _("Hij overleed te %(death_place)s %(age)s jaar oud."),
         ],
         Person.FEMALE: [
-            _("She died in %(death_place)s."),
-            _("She died in %(death_place)s at the age of %(age)s."),
+            _("Zij overleed te %(death_place)s."),
+            _("Zij overleed te %(death_place)s %(age)s jaar oud."),
         ],
     },
     [
-        _("Died in %(death_place)s."),
-        _("Died in %(death_place)s (%(age)s)."),
+        _("Overleed te %(death_place)s."),
+        _("Overleed te %(death_place)s (%(age)s)."),
     ],
 ]
 
@@ -493,34 +493,34 @@ died_no_date_no_place = [
     {
         Person.UNKNOWN: [
             "",
-            _("%(unknown_gender_name)s died at the age of %(age)s."),
+            _("%(unknown_gender_name)s overleed %(age)s jaar oud."),
         ],
         Person.MALE: [
             "",
-            _("%(male_name)s died at the age of %(age)s."),
+            _("%(male_name)s overleed %(age)s jaar oud."),
         ],
         Person.FEMALE: [
             "",
-            _("%(female_name)s died at the age of %(age)s."),
+            _("%(female_name)s overleed %(age)s jaar oud."),
         ],
     },
     {
         Person.UNKNOWN: [
             "",
-            _("This person died at the age of %(age)s."),
+            _("Deze persoon overleed %(age)s jaar oud."),
         ],
         Person.MALE: [
             "",
-            _("He died at the age of %(age)s."),
+            _("Hij overleed %(age)s jaar oud."),
         ],
         Person.FEMALE: [
             "",
-            _("She died at the age of %(age)s."),
+            _("Zij overleed %(age)s jaar oud."),
         ],
     },
     [
         "",
-        _("Died (%(age)s)."),
+        _("Overleed (%(age)s)."),
     ],
 ]
 
@@ -532,145 +532,145 @@ died_no_date_no_place = [
 buried_full_date_place = {
     Person.MALE: [
         _(
-            "%(male_name)s was buried on %(burial_date)s in %(burial_place)s%(endnotes)s."
+            "%(male_name)s werd begraven op %(burial_date)s te %(burial_place)s%(endnotes)s."
         ),
-        _("He was buried on %(burial_date)s in %(burial_place)s%(endnotes)s."),
+        _("Hij werd begraven op %(burial_date)s te %(burial_place)s%(endnotes)s."),
     ],
     Person.FEMALE: [
         _(
-            "%(female_name)s was buried on %(burial_date)s in %(burial_place)s%(endnotes)s."
+            "%(female_name)s werd begraven op %(burial_date)s te %(burial_place)s%(endnotes)s."
         ),
-        _("She was buried on %(burial_date)s in %(burial_place)s%(endnotes)s."),
+        _("Zij werd begraven op %(burial_date)s te %(burial_place)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
         _(
-            "%(unknown_gender_name)s was buried on %(burial_date)s in %(burial_place)s%(endnotes)s."
+            "%(unknown_gender_name)s werd begraven op %(burial_date)s te %(burial_place)s%(endnotes)s."
         ),
-        _("This person was buried on %(burial_date)s in %(burial_place)s%(endnotes)s."),
+        _("Deze persoon werd begraven op %(burial_date)s te %(burial_place)s%(endnotes)s."),
     ],
-    "succinct": _("Buried %(burial_date)s in %(burial_place)s%(endnotes)s."),
+    "succinct": _("Begraven %(burial_date)s te %(burial_place)s%(endnotes)s."),
 }
 
 buried_full_date_no_place = {
     Person.MALE: [
-        _("%(male_name)s was buried on %(burial_date)s%(endnotes)s."),
-        _("He was buried on %(burial_date)s%(endnotes)s."),
+        _("%(male_name)s werd begraven op %(burial_date)s%(endnotes)s."),
+        _("Hij werd begraven op %(burial_date)s%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("%(female_name)s was buried on %(burial_date)s%(endnotes)s."),
-        _("She was buried on %(burial_date)s%(endnotes)s."),
+        _("%(female_name)s werd begraven op %(burial_date)s%(endnotes)s."),
+        _("Zij werd begraven op %(burial_date)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
-        _("%(unknown_gender_name)s was buried on %(burial_date)s%(endnotes)s."),
-        _("This person was buried on %(burial_date)s%(endnotes)s."),
+        _("%(unknown_gender_name)s werd begraven op %(burial_date)s%(endnotes)s."),
+        _("Deze persoon werd begraven op %(burial_date)s%(endnotes)s."),
     ],
-    "succinct": _("Buried %(burial_date)s%(endnotes)s."),
+    "succinct": _("Begraven %(burial_date)s%(endnotes)s."),
 }
 
 buried_partial_date_place = {
     Person.MALE: [
         _(
-            "%(male_name)s was buried in %(month_year)s in %(burial_place)s%(endnotes)s."
+            "%(male_name)s werd begraven in %(month_year)s te %(burial_place)s%(endnotes)s."
         ),
-        _("He was buried in %(month_year)s in %(burial_place)s%(endnotes)s."),
+        _("Hij werd begraven in %(month_year)s te %(burial_place)s%(endnotes)s."),
     ],
     Person.FEMALE: [
         _(
-            "%(female_name)s was buried in %(month_year)s in %(burial_place)s%(endnotes)s."
+            "%(female_name)s werd begraven in %(month_year)s te %(burial_place)s%(endnotes)s."
         ),
-        _("She was buried in %(month_year)s in %(burial_place)s%(endnotes)s."),
+        _("Zij werd begraven in %(month_year)s te %(burial_place)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
         _(
-            "%(unknown_gender_name)s was buried in %(month_year)s in %(burial_place)s%(endnotes)s."
+            "%(unknown_gender_name)s werd begraven in %(month_year)s te %(burial_place)s%(endnotes)s."
         ),
-        _("This person was buried in %(month_year)s in %(burial_place)s%(endnotes)s."),
+        _("Deze persoon werd begraven in %(month_year)s te %(burial_place)s%(endnotes)s."),
     ],
-    "succinct": _("Buried %(month_year)s in %(burial_place)s%(endnotes)s."),
+    "succinct": _("Begraven %(month_year)s te %(burial_place)s%(endnotes)s."),
 }
 
 buried_partial_date_no_place = {
     Person.MALE: [
-        _("%(male_name)s was buried in %(month_year)s%(endnotes)s."),
-        _("He was buried in %(month_year)s%(endnotes)s."),
+        _("%(male_name)s werd begraven in %(month_year)s%(endnotes)s."),
+        _("Hij werd begraven in %(month_year)s%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("%(female_name)s was buried in %(month_year)s%(endnotes)s."),
-        _("She was buried in %(month_year)s%(endnotes)s."),
+        _("%(female_name)s werd begraven in %(month_year)s%(endnotes)s."),
+        _("Zij werd begraven in %(month_year)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
-        _("%(unknown_gender_name)s was buried in %(month_year)s%(endnotes)s."),
-        _("This person was buried in %(month_year)s%(endnotes)s."),
+        _("%(unknown_gender_name)s werd begraven in %(month_year)s%(endnotes)s."),
+        _("Deze persoon werd begraven in %(month_year)s%(endnotes)s."),
     ],
-    "succinct": _("Buried %(month_year)s%(endnotes)s."),
+    "succinct": _("Begraven %(month_year)s%(endnotes)s."),
 }
 
 buried_modified_date_place = {
     Person.MALE: [
         _(
-            "%(male_name)s was buried %(modified_date)s in %(burial_place)s%(endnotes)s."
+            "%(male_name)s werd begraven %(modified_date)s te %(burial_place)s%(endnotes)s."
         ),
-        _("He was buried %(modified_date)s in %(burial_place)s%(endnotes)s."),
+        _("Hij werd begraven %(modified_date)s te %(burial_place)s%(endnotes)s."),
     ],
     Person.FEMALE: [
         _(
-            "%(female_name)s was buried %(modified_date)s in %(burial_place)s%(endnotes)s."
+            "%(female_name)s werd begraven %(modified_date)s te %(burial_place)s%(endnotes)s."
         ),
-        _("She was buried %(modified_date)s in %(burial_place)s%(endnotes)s."),
+        _("Zij werd begraven %(modified_date)s te %(burial_place)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
         _(
-            "%(unknown_gender_name)s was buried %(modified_date)s in %(burial_place)s%(endnotes)s."
+            "%(unknown_gender_name)s werd begraven %(modified_date)s te %(burial_place)s%(endnotes)s."
         ),
-        _("This person was buried %(modified_date)s in %(burial_place)s%(endnotes)s."),
+        _("Deze persoon werd begraven %(modified_date)s te %(burial_place)s%(endnotes)s."),
     ],
-    "succinct": _("Buried %(modified_date)s in %(burial_place)s%(endnotes)s."),
+    "succinct": _("Begraven %(modified_date)s te %(burial_place)s%(endnotes)s."),
 }
 
 buried_modified_date_no_place = {
     Person.MALE: [
-        _("%(male_name)s was buried %(modified_date)s%(endnotes)s."),
-        _("He was buried %(modified_date)s%(endnotes)s."),
+        _("%(male_name)s werd begraven %(modified_date)s%(endnotes)s."),
+        _("Hij werd begraven %(modified_date)s%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("%(female_name)s was buried %(modified_date)s%(endnotes)s."),
-        _("She was buried %(modified_date)s%(endnotes)s."),
+        _("%(female_name)s werd begraven %(modified_date)s%(endnotes)s."),
+        _("Zij werd begraven %(modified_date)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
-        _("%(unknown_gender_name)s was buried %(modified_date)s%(endnotes)s."),
-        _("This person was buried %(modified_date)s%(endnotes)s."),
+        _("%(unknown_gender_name)s werd begraven %(modified_date)s%(endnotes)s."),
+        _("Deze persoon werd begraven %(modified_date)s%(endnotes)s."),
     ],
-    "succinct": _("Buried %(modified_date)s%(endnotes)s."),
+    "succinct": _("Begraven %(modified_date)s%(endnotes)s."),
 }
 
 buried_no_date_place = {
     Person.MALE: [
-        _("%(male_name)s was buried in %(burial_place)s%(endnotes)s."),
-        _("He was buried in %(burial_place)s%(endnotes)s."),
+        _("%(male_name)s werd begraven te %(burial_place)s%(endnotes)s."),
+        _("Hij werd begraven te %(burial_place)s%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("%(female_name)s was buried in %(burial_place)s%(endnotes)s."),
-        _("She was buried in %(burial_place)s%(endnotes)s."),
+        _("%(female_name)s werd begraven te %(burial_place)s%(endnotes)s."),
+        _("Zij werd begraven te %(burial_place)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
-        _("%(unknown_gender_name)s was buried in %(burial_place)s%(endnotes)s."),
-        _("This person was buried in %(burial_place)s%(endnotes)s."),
+        _("%(unknown_gender_name)s werd begraven te %(burial_place)s%(endnotes)s."),
+        _("Deze persoon werd begraven te %(burial_place)s%(endnotes)s."),
     ],
-    "succinct": _("Buried in %(burial_place)s%(endnotes)s."),
+    "succinct": _("Begraven te %(burial_place)s%(endnotes)s."),
 }
 
 buried_no_date_no_place = {
     Person.MALE: [
-        _("%(male_name)s was buried%(endnotes)s."),
-        _("He was buried%(endnotes)s."),
+        _("%(male_name)s werd begraven%(endnotes)s."),
+        _("Hij werd begraven%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("%(female_name)s was buried%(endnotes)s."),
-        _("She was buried%(endnotes)s."),
+        _("%(female_name)s werd begraven%(endnotes)s."),
+        _("Zij werd begraven%(endnotes)s."),
     ],
     Person.UNKNOWN: [
-        _("%(unknown_gender_name)s was buried%(endnotes)s."),
-        _("This person was buried%(endnotes)s."),
+        _("%(unknown_gender_name)s werd begraven%(endnotes)s."),
+        _("Deze persoon werd begraven%(endnotes)s."),
     ],
     "succinct": _("Buried%(endnotes)s."),
 }
@@ -682,153 +682,153 @@ buried_no_date_no_place = {
 baptised_full_date_place = {
     Person.MALE: [
         _(
-            "%(male_name)s was baptized on %(baptism_date)s in %(baptism_place)s%(endnotes)s."
+            "%(male_name)s werd gedoopt op %(baptism_date)s te %(baptism_place)s%(endnotes)s."
         ),
-        _("He was baptized on %(baptism_date)s in %(baptism_place)s%(endnotes)s."),
+        _("Hij werd gedoopt op %(baptism_date)s te %(baptism_place)s%(endnotes)s."),
     ],
     Person.FEMALE: [
         _(
-            "%(female_name)s was baptized on %(baptism_date)s in %(baptism_place)s%(endnotes)s."
+            "%(female_name)s werd gedoopt op %(baptism_date)s te %(baptism_place)s%(endnotes)s."
         ),
-        _("She was baptized on %(baptism_date)s in %(baptism_place)s%(endnotes)s."),
+        _("Zij werd gedoopt op %(baptism_date)s te %(baptism_place)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
         _(
-            "%(unknown_gender_name)s was baptized on %(baptism_date)s in %(baptism_place)s%(endnotes)s."
+            "%(unknown_gender_name)s werd gedoopt op %(baptism_date)s te %(baptism_place)s%(endnotes)s."
         ),
         _(
-            "This person was baptized on %(baptism_date)s in %(baptism_place)s%(endnotes)s."
+            "Deze persoon werd gedoopt op %(baptism_date)s te %(baptism_place)s%(endnotes)s."
         ),
     ],
-    "succinct": _("Baptized %(baptism_date)s in %(baptism_place)s%(endnotes)s."),
+    "succinct": _("Gedoopt %(baptism_date)s te %(baptism_place)s%(endnotes)s."),
 }
 
 baptised_full_date_no_place = {
     Person.MALE: [
-        _("%(male_name)s was baptized on %(baptism_date)s%(endnotes)s."),
-        _("He was baptized on %(baptism_date)s%(endnotes)s."),
+        _("%(male_name)s werd gedoopt op %(baptism_date)s%(endnotes)s."),
+        _("Hij werd gedoopt op %(baptism_date)s%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("%(female_name)s was baptized on %(baptism_date)s%(endnotes)s."),
-        _("She was baptized on %(baptism_date)s%(endnotes)s."),
+        _("%(female_name)s werd gedoopt op %(baptism_date)s%(endnotes)s."),
+        _("Zij werd gedoopt op %(baptism_date)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
-        _("%(unknown_gender_name)s was baptized on %(baptism_date)s%(endnotes)s."),
-        _("This person was baptized on %(baptism_date)s%(endnotes)s."),
+        _("%(unknown_gender_name)s werd gedoopt op %(baptism_date)s%(endnotes)s."),
+        _("Deze persoon werd gedoopt op %(baptism_date)s%(endnotes)s."),
     ],
-    "succinct": _("Baptized %(baptism_date)s%(endnotes)s."),
+    "succinct": _("Gedoopt %(baptism_date)s%(endnotes)s."),
 }
 
 baptised_partial_date_place = {
     Person.MALE: [
         _(
-            "%(male_name)s was baptized in %(month_year)s in %(baptism_place)s%(endnotes)s."
+            "%(male_name)s werd gedoopt in %(month_year)s te %(baptism_place)s%(endnotes)s."
         ),
-        _("He was baptized in %(month_year)s in %(baptism_place)s%(endnotes)s."),
+        _("Hij werd gedoopt in %(month_year)s te %(baptism_place)s%(endnotes)s."),
     ],
     Person.FEMALE: [
         _(
-            "%(female_name)s was baptized in %(month_year)s in %(baptism_place)s%(endnotes)s."
+            "%(female_name)s werd gedoopt in %(month_year)s te %(baptism_place)s%(endnotes)s."
         ),
-        _("She was baptized in %(month_year)s in %(baptism_place)s%(endnotes)s."),
+        _("Zij werd gedoopt in %(month_year)s te %(baptism_place)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
         _(
-            "%(unknown_gender_name)s was baptized in %(month_year)s in %(baptism_place)s%(endnotes)s."
+            "%(unknown_gender_name)s werd gedoopt in %(month_year)s te %(baptism_place)s%(endnotes)s."
         ),
         _(
-            "This person was baptized in %(month_year)s in %(baptism_place)s%(endnotes)s."
+            "Deze persoon werd gedoopt in %(month_year)s te %(baptism_place)s%(endnotes)s."
         ),
     ],
-    "succinct": _("Baptized %(month_year)s in %(baptism_place)s%(endnotes)s."),
+    "succinct": _("Gedoopt %(month_year)s te %(baptism_place)s%(endnotes)s."),
 }
 
 baptised_partial_date_no_place = {
     Person.MALE: [
-        _("%(male_name)s was baptized in %(month_year)s%(endnotes)s."),
-        _("He was baptized in %(month_year)s%(endnotes)s."),
+        _("%(male_name)s werd gedoopt in %(month_year)s%(endnotes)s."),
+        _("Hij werd gedoopt in %(month_year)s%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("%(female_name)s was baptized in %(month_year)s%(endnotes)s."),
-        _("She was baptized in %(month_year)s%(endnotes)s."),
+        _("%(female_name)s werd gedoopt in %(month_year)s%(endnotes)s."),
+        _("Zij werd gedoopt in %(month_year)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
-        _("%(unknown_gender_name)s was baptized in %(month_year)s%(endnotes)s."),
-        _("This person was baptized in %(month_year)s%(endnotes)s."),
+        _("%(unknown_gender_name)s werd gedoopt in %(month_year)s%(endnotes)s."),
+        _("Deze persoon werd gedoopt in %(month_year)s%(endnotes)s."),
     ],
-    "succinct": _("Baptized %(month_year)s%(endnotes)s."),
+    "succinct": _("Gedoopt %(month_year)s%(endnotes)s."),
 }
 
 baptised_modified_date_place = {
     Person.MALE: [
         _(
-            "%(male_name)s was baptized %(modified_date)s in %(baptism_place)s%(endnotes)s."
+            "%(male_name)s werd gedoopt %(modified_date)s te %(baptism_place)s%(endnotes)s."
         ),
-        _("He was baptized %(modified_date)s in %(baptism_place)s%(endnotes)s."),
+        _("Hij werd gedoopt %(modified_date)s te %(baptism_place)s%(endnotes)s."),
     ],
     Person.FEMALE: [
         _(
-            "%(female_name)s was baptized %(modified_date)s in %(baptism_place)s%(endnotes)s."
+            "%(female_name)s werd gedoopt %(modified_date)s te %(baptism_place)s%(endnotes)s."
         ),
-        _("She was baptized %(modified_date)s in %(baptism_place)s%(endnotes)s."),
+        _("Zij werd gedoopt %(modified_date)s te %(baptism_place)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
         _(
-            "%(unknown_gender_name)s was baptized %(modified_date)s in %(baptism_place)s%(endnotes)s."
+            "%(unknown_gender_name)s werd gedoopt %(modified_date)s te %(baptism_place)s%(endnotes)s."
         ),
         _(
-            "This person was baptized %(modified_date)s in %(baptism_place)s%(endnotes)s."
+            "Deze persoon werd gedoopt %(modified_date)s te %(baptism_place)s%(endnotes)s."
         ),
     ],
-    "succinct": _("Baptized %(modified_date)s in %(baptism_place)s%(endnotes)s."),
+    "succinct": _("Gedoopt %(modified_date)s te %(baptism_place)s%(endnotes)s."),
 }
 
 baptised_modified_date_no_place = {
     Person.MALE: [
-        _("%(male_name)s was baptized %(modified_date)s%(endnotes)s."),
-        _("He was baptized %(modified_date)s%(endnotes)s."),
+        _("%(male_name)s werd gedoopt %(modified_date)s%(endnotes)s."),
+        _("Hij werd gedoopt %(modified_date)s%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("%(female_name)s was baptized %(modified_date)s%(endnotes)s."),
-        _("She was baptized %(modified_date)s%(endnotes)s."),
+        _("%(female_name)s werd gedoopt %(modified_date)s%(endnotes)s."),
+        _("Zij werd gedoopt %(modified_date)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
-        _("%(unknown_gender_name)s was baptized %(modified_date)s%(endnotes)s."),
-        _("This person was baptized %(modified_date)s%(endnotes)s."),
+        _("%(unknown_gender_name)s werd gedoopt %(modified_date)s%(endnotes)s."),
+        _("Deze persoon werd gedoopt %(modified_date)s%(endnotes)s."),
     ],
-    "succinct": _("Baptized %(modified_date)s%(endnotes)s."),
+    "succinct": _("Gedoopt %(modified_date)s%(endnotes)s."),
 }
 
 baptised_no_date_place = {
     Person.MALE: [
-        _("%(male_name)s was baptized in %(baptism_place)s%(endnotes)s."),
-        _("He was baptized in %(baptism_place)s%(endnotes)s."),
+        _("%(male_name)s werd gedoopt te %(baptism_place)s%(endnotes)s."),
+        _("Hij werd gedoopt te %(baptism_place)s%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("%(female_name)s was baptized in %(baptism_place)s%(endnotes)s."),
-        _("She was baptized in %(baptism_place)s%(endnotes)s."),
+        _("%(female_name)s werd gedoopt te %(baptism_place)s%(endnotes)s."),
+        _("Zij werd gedoopt te %(baptism_place)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
-        _("%(unknown_gender_name)s was baptized in %(baptism_place)s%(endnotes)s."),
-        _("This person was baptized in %(baptism_place)s%(endnotes)s."),
+        _("%(unknown_gender_name)s werd gedoopt te %(baptism_place)s%(endnotes)s."),
+        _("Deze persoon werd gedoopt te %(baptism_place)s%(endnotes)s."),
     ],
-    "succinct": _("Baptized in %(baptism_place)s%(endnotes)s."),
+    "succinct": _("Gedoopt te %(baptism_place)s%(endnotes)s."),
 }
 
 baptised_no_date_no_place = {
     Person.MALE: [
-        _("%(male_name)s was baptized%(endnotes)s."),
-        _("He was baptized%(endnotes)s."),
+        _("%(male_name)s werd gedoopt%(endnotes)s."),
+        _("Hij werd gedoopt%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("%(female_name)s was baptized%(endnotes)s."),
-        _("She was baptized%(endnotes)s."),
+        _("%(female_name)s werd gedoopt%(endnotes)s."),
+        _("Zij werd gedoopt%(endnotes)s."),
     ],
     Person.UNKNOWN: [
-        _("%(unknown_gender_name)s was baptized%(endnotes)s."),
-        _("This person was baptized%(endnotes)s."),
+        _("%(unknown_gender_name)s werd gedoopt%(endnotes)s."),
+        _("Deze persoon werd gedoopt%(endnotes)s."),
     ],
-    "succinct": _("Baptized%(endnotes)s."),
+    "succinct": _("Gedoopt%(endnotes)s."),
 }
 
 # ------------------------------------------------------------------------
@@ -839,163 +839,163 @@ baptised_no_date_no_place = {
 christened_full_date_place = {
     Person.MALE: [
         _(
-            "%(male_name)s was christened on %(christening_date)s in %(christening_place)s%(endnotes)s."
+            "%(male_name)s werd gedoopt op %(christening_date)s te %(christening_place)s%(endnotes)s."
         ),
         _(
-            "He was christened on %(christening_date)s in %(christening_place)s%(endnotes)s."
+            "Hij werd gedoopt op %(christening_date)s te %(christening_place)s%(endnotes)s."
         ),
     ],
     Person.FEMALE: [
         _(
-            "%(female_name)s was christened on %(christening_date)s in %(christening_place)s%(endnotes)s."
+            "%(female_name)s werd gedoopt op %(christening_date)s te %(christening_place)s%(endnotes)s."
         ),
         _(
-            "She was christened on %(christening_date)s in %(christening_place)s%(endnotes)s."
+            "Zij werd gedoopt op %(christening_date)s te %(christening_place)s%(endnotes)s."
         ),
     ],
     Person.UNKNOWN: [
         _(
-            "%(unknown_gender_name)s was christened on %(christening_date)s in %(christening_place)s%(endnotes)s."
+            "%(unknown_gender_name)s werd gedoopt op %(christening_date)s te %(christening_place)s%(endnotes)s."
         ),
         _(
-            "This person was christened on %(christening_date)s in %(christening_place)s%(endnotes)s."
+            "Deze persoon werd gedoopt op %(christening_date)s te %(christening_place)s%(endnotes)s."
         ),
     ],
     "succinct": _(
-        "Christened %(christening_date)s in %(christening_place)s%(endnotes)s."
+        "Gedoopt %(christening_date)s te %(christening_place)s%(endnotes)s."
     ),
 }
 
 christened_full_date_no_place = {
     Person.MALE: [
-        _("%(male_name)s was christened on %(christening_date)s%(endnotes)s."),
-        _("He was christened on %(christening_date)s%(endnotes)s."),
+        _("%(male_name)s werd gedoopt op %(christening_date)s%(endnotes)s."),
+        _("Hij werd gedoopt op %(christening_date)s%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("%(female_name)s was christened on %(christening_date)s%(endnotes)s."),
-        _("She was christened on %(christening_date)s%(endnotes)s."),
+        _("%(female_name)s werd gedoopt op %(christening_date)s%(endnotes)s."),
+        _("Zij werd gedoopt op %(christening_date)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
         _(
-            "%(unknown_gender_name)s was christened on %(christening_date)s%(endnotes)s."
+            "%(unknown_gender_name)s werd gedoopt op %(christening_date)s%(endnotes)s."
         ),
-        _("This person was christened on %(christening_date)s%(endnotes)s."),
+        _("Deze persoon werd gedoopt op %(christening_date)s%(endnotes)s."),
     ],
-    "succinct": _("Christened %(christening_date)s%(endnotes)s."),
+    "succinct": _("Gedoopt %(christening_date)s%(endnotes)s."),
 }
 
 christened_partial_date_place = {
     Person.MALE: [
         _(
-            "%(male_name)s was christened in %(month_year)s in %(christening_place)s%(endnotes)s."
+            "%(male_name)s werd gedoopt in %(month_year)s te %(christening_place)s%(endnotes)s."
         ),
-        _("He was christened in %(month_year)s in %(christening_place)s%(endnotes)s."),
+        _("Hij werd gedoopt in %(month_year)s te %(christening_place)s%(endnotes)s."),
     ],
     Person.FEMALE: [
         _(
-            "%(female_name)s was christened in %(month_year)s in %(christening_place)s%(endnotes)s."
+            "%(female_name)s werd gedoopt in %(month_year)s te %(christening_place)s%(endnotes)s."
         ),
-        _("She was christened in %(month_year)s in %(christening_place)s%(endnotes)s."),
+        _("Zij werd gedoopt in %(month_year)s te %(christening_place)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
         _(
-            "%(unknown_gender_name)s was christened in %(month_year)s in %(christening_place)s%(endnotes)s."
+            "%(unknown_gender_name)s werd gedoopt in %(month_year)s te %(christening_place)s%(endnotes)s."
         ),
         _(
-            "This person was christened in %(month_year)s in %(christening_place)s%(endnotes)s."
+            "Deze persoon werd gedoopt in %(month_year)s te %(christening_place)s%(endnotes)s."
         ),
     ],
-    "succinct": _("Christened %(month_year)s in %(christening_place)s%(endnotes)s."),
+    "succinct": _("Gedoopt %(month_year)s te %(christening_place)s%(endnotes)s."),
 }
 
 christened_partial_date_no_place = {
     Person.MALE: [
-        _("%(male_name)s was christened in %(month_year)s%(endnotes)s."),
-        _("He was christened in %(month_year)s%(endnotes)s."),
+        _("%(male_name)s werd gedoopt in %(month_year)s%(endnotes)s."),
+        _("Hij werd gedoopt in %(month_year)s%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("%(female_name)s was christened in %(month_year)s%(endnotes)s."),
-        _("She was christened in %(month_year)s%(endnotes)s."),
+        _("%(female_name)s werd gedoopt in %(month_year)s%(endnotes)s."),
+        _("Zij werd gedoopt in %(month_year)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
-        _("%(unknown_gender_name)s was christened in %(month_year)s%(endnotes)s."),
-        _("This person was christened in %(month_year)s%(endnotes)s."),
+        _("%(unknown_gender_name)s werd gedoopt in %(month_year)s%(endnotes)s."),
+        _("Deze persoon werd gedoopt in %(month_year)s%(endnotes)s."),
     ],
-    "succinct": _("Christened %(month_year)s%(endnotes)s."),
+    "succinct": _("Gedoopt %(month_year)s%(endnotes)s."),
 }
 
 christened_modified_date_place = {
     Person.MALE: [
         _(
-            "%(male_name)s was christened %(modified_date)s in %(christening_place)s%(endnotes)s."
+            "%(male_name)s werd gedoopt %(modified_date)s te %(christening_place)s%(endnotes)s."
         ),
-        _("He was christened %(modified_date)s in %(christening_place)s%(endnotes)s."),
+        _("Hij werd gedoopt %(modified_date)s te %(christening_place)s%(endnotes)s."),
     ],
     Person.FEMALE: [
         _(
-            "%(female_name)s was christened %(modified_date)s in %(christening_place)s%(endnotes)s."
+            "%(female_name)s werd gedoopt %(modified_date)s te %(christening_place)s%(endnotes)s."
         ),
-        _("She was christened %(modified_date)s in %(christening_place)s%(endnotes)s."),
+        _("Zij werd gedoopt %(modified_date)s te %(christening_place)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
         _(
-            "%(unknown_gender_name)s was christened %(modified_date)s in %(christening_place)s%(endnotes)s."
+            "%(unknown_gender_name)s werd gedoopt %(modified_date)s te %(christening_place)s%(endnotes)s."
         ),
         _(
-            "This person was christened %(modified_date)s in %(christening_place)s%(endnotes)s."
+            "Deze persoon werd gedoopt %(modified_date)s te %(christening_place)s%(endnotes)s."
         ),
     ],
-    "succinct": _("Christened %(modified_date)s in %(christening_place)s%(endnotes)s."),
+    "succinct": _("Gedoopt %(modified_date)s te %(christening_place)s%(endnotes)s."),
 }
 
 christened_modified_date_no_place = {
     Person.MALE: [
-        _("%(male_name)s was christened %(modified_date)s%(endnotes)s."),
-        _("He was christened %(modified_date)s%(endnotes)s."),
+        _("%(male_name)s werd gedoopt %(modified_date)s%(endnotes)s."),
+        _("Hij werd gedoopt %(modified_date)s%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("%(female_name)s was christened %(modified_date)s%(endnotes)s."),
-        _("She was christened %(modified_date)s%(endnotes)s."),
+        _("%(female_name)s werd gedoopt %(modified_date)s%(endnotes)s."),
+        _("Zij werd gedoopt %(modified_date)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
-        _("%(unknown_gender_name)s was christened %(modified_date)s%(endnotes)s."),
-        _("This person was christened %(modified_date)s%(endnotes)s."),
+        _("%(unknown_gender_name)s werd gedoopt %(modified_date)s%(endnotes)s."),
+        _("Deze persoon werd gedoopt %(modified_date)s%(endnotes)s."),
     ],
-    "succinct": _("Christened %(modified_date)s%(endnotes)s."),
+    "succinct": _("Gedoopt %(modified_date)s%(endnotes)s."),
 }
 
 christened_no_date_place = {
     Person.MALE: [
-        _("%(male_name)s was christened in %(christening_place)s%(endnotes)s."),
-        _("He was christened in %(christening_place)s%(endnotes)s."),
+        _("%(male_name)s werd gedoopt te %(christening_place)s%(endnotes)s."),
+        _("Hij werd gedoopt te %(christening_place)s%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("%(female_name)s was christened in %(christening_place)s%(endnotes)s."),
-        _("She was christened in %(christening_place)s%(endnotes)s."),
+        _("%(female_name)s werd gedoopt te %(christening_place)s%(endnotes)s."),
+        _("Zij werd gedoopt te %(christening_place)s%(endnotes)s."),
     ],
     Person.UNKNOWN: [
         _(
-            "%(unknown_gender_name)s was christened in %(christening_place)s%(endnotes)s."
+            "%(unknown_gender_name)s werd gedoopt te %(christening_place)s%(endnotes)s."
         ),
-        _("This person was christened in %(christening_place)s%(endnotes)s."),
+        _("Deze persoon werd gedoopt te %(christening_place)s%(endnotes)s."),
     ],
-    "succinct": _("Christened in %(christening_place)s%(endnotes)s."),
+    "succinct": _("Gedoopt te %(christening_place)s%(endnotes)s."),
 }
 
 christened_no_date_no_place = {
     Person.MALE: [
-        _("%(male_name)s was christened%(endnotes)s."),
-        _("He was christened%(endnotes)s."),
+        _("%(male_name)s werd gedoopt%(endnotes)s."),
+        _("Hij werd gedoopt%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("%(female_name)s was christened%(endnotes)s."),
-        _("She was christened%(endnotes)s."),
+        _("%(female_name)s werd gedoopt%(endnotes)s."),
+        _("Zij werd gedoopt%(endnotes)s."),
     ],
     Person.UNKNOWN: [
-        _("%(unknown_gender_name)s was christened%(endnotes)s."),
-        _("This person was christened%(endnotes)s."),
+        _("%(unknown_gender_name)s werd gedoopt%(endnotes)s."),
+        _("Deze persoon werd gedoopt%(endnotes)s."),
     ],
-    "succinct": _("Christened%(endnotes)s."),
+    "succinct": _("Gedoopt%(endnotes)s."),
 }
 
 # -------------------------------------------------------------------------
@@ -1006,242 +1006,242 @@ christened_no_date_no_place = {
 child_father_mother = {
     Person.UNKNOWN: [
         [
-            _("%(male_name)s is the child of %(father)s and %(mother)s."),
-            _("%(male_name)s was the child of %(father)s and %(mother)s."),
+            _("%(male_name)s is het kind van %(father)s en %(mother)s."),
+            _("%(male_name)s was het kind van %(father)s en %(mother)s."),
         ],
         [
-            _("This person is the child of %(father)s and %(mother)s."),
-            _("This person was the child of %(father)s and %(mother)s."),
+            _("Deze persoon is het kind van %(father)s en %(mother)s."),
+            _("Deze persoon was het kind van %(father)s en %(mother)s."),
         ],
-        _("Child of %(father)s and %(mother)s."),
+        _("Child of %(father)s en %(mother)s."),
     ],
     Person.MALE: [
         [
-            _("%(male_name)s is the son of %(father)s and %(mother)s."),
-            _("%(male_name)s was the son of %(father)s and %(mother)s."),
+            _("%(male_name)s is de zoon van %(father)s en %(mother)s."),
+            _("%(male_name)s was de zoon van %(father)s en %(mother)s."),
         ],
         [
-            _("He is the son of %(father)s and %(mother)s."),
-            _("He was the son of %(father)s and %(mother)s."),
+            _("Hij is de zoon van %(father)s en %(mother)s."),
+            _("Hij was de zoon van %(father)s en %(mother)s."),
         ],
-        _("Son of %(father)s and %(mother)s."),
+        _("Zoon van %(father)s en %(mother)s."),
     ],
     Person.FEMALE: [
         [
-            _("%(female_name)s is the daughter of %(father)s and %(mother)s."),
-            _("%(female_name)s was the daughter of %(father)s and %(mother)s."),
+            _("%(female_name)s is de dochter van %(father)s en %(mother)s."),
+            _("%(female_name)s was de dochter van %(father)s en %(mother)s."),
         ],
         [
-            _("She is the daughter of %(father)s and %(mother)s."),
-            _("She was the daughter of %(father)s and %(mother)s."),
+            _("Zij is de dochter van %(father)s en %(mother)s."),
+            _("Zij was de dochter van %(father)s en %(mother)s."),
         ],
-        _("Daughter of %(father)s and %(mother)s."),
+        _("Dochter van %(father)s en %(mother)s."),
     ],
 }
 
 child_father = {
     Person.UNKNOWN: [
         [
-            _("%(male_name)s is the child of %(father)s."),
-            _("%(male_name)s was the child of %(father)s."),
+            _("%(male_name)s is het kind van %(father)s."),
+            _("%(male_name)s was het kind van %(father)s."),
         ],
         [
-            _("This person is the child of %(father)s."),
-            _("This person was the child of %(father)s."),
+            _("Deze persoon is het kind van %(father)s."),
+            _("Deze persoon was het kind van %(father)s."),
         ],
-        _("Child of %(father)s."),
+        _("Kind van %(father)s."),
     ],
     Person.MALE: [
         [
-            _("%(male_name)s is the son of %(father)s."),
-            _("%(male_name)s was the son of %(father)s."),
+            _("%(male_name)s is de zoon van %(father)s."),
+            _("%(male_name)s was de zoon van %(father)s."),
         ],
         [
-            _("He is the son of %(father)s."),
-            _("He was the son of %(father)s."),
+            _("Hij is de zoon van %(father)s."),
+            _("Hij was de zoon van %(father)s."),
         ],
-        _("Son of %(father)s."),
+        _("Zoon van %(father)s."),
     ],
     Person.FEMALE: [
         [
-            _("%(female_name)s is the daughter of %(father)s."),
-            _("%(female_name)s was the daughter of %(father)s."),
+            _("%(female_name)s is de dochter van %(father)s."),
+            _("%(female_name)s was de dochter van %(father)s."),
         ],
         [
-            _("She is the daughter of %(father)s."),
-            _("She was the daughter of %(father)s."),
+            _("Zij is de dochter van %(father)s."),
+            _("Zij was de dochter van %(father)s."),
         ],
-        _("Daughter of %(father)s."),
+        _("Dochter van %(father)s."),
     ],
 }
 
 child_mother = {
     Person.UNKNOWN: [
         [
-            _("%(male_name)s is the child of %(mother)s."),
-            _("%(male_name)s was the child of %(mother)s."),
+            _("%(male_name)s is het kind van %(mother)s."),
+            _("%(male_name)s was het kind van %(mother)s."),
         ],
         [
-            _("This person is the child of %(mother)s."),
-            _("This person was the child of %(mother)s."),
+            _("Deze persoon is het kind van %(mother)s."),
+            _("Deze persoon was het kind van %(mother)s."),
         ],
         _("Child of %(mother)s."),
     ],
     Person.MALE: [
         [
-            _("%(male_name)s is the son of %(mother)s."),
-            _("%(male_name)s was the son of %(mother)s."),
+            _("%(male_name)s is de zoon van %(mother)s."),
+            _("%(male_name)s was de zoon van %(mother)s."),
         ],
         [
-            _("He is the son of %(mother)s."),
-            _("He was the son of %(mother)s."),
+            _("Hij is de zoon van %(mother)s."),
+            _("Hij was de zoon van %(mother)s."),
         ],
-        _("Son of %(mother)s."),
+        _("Zoon van %(mother)s."),
     ],
     Person.FEMALE: [
         [
-            _("%(female_name)s is the daughter of %(mother)s."),
-            _("%(female_name)s was the daughter of %(mother)s."),
+            _("%(female_name)s is de dochter van %(mother)s."),
+            _("%(female_name)s was de dochter van %(mother)s."),
         ],
         [
-            _("She is the daughter of %(mother)s."),
-            _("She was the daughter of %(mother)s."),
+            _("Zij is de dochter van %(mother)s."),
+            _("Zij was de dochter van %(mother)s."),
         ],
-        _("Daughter of %(mother)s."),
+        _("Dochter van %(mother)s."),
     ],
 }
 
 # ------------------------------------------------------------------------
 #
-# Marriage strings - Relationship type MARRIED
+# Marriage strings - Relationship type trouwde
 #
 # ------------------------------------------------------------------------
 marriage_first_date_place = {
     Person.UNKNOWN: [
         _(
-            "This person married %(spouse)s in %(partial_date)s in %(place)s%(endnotes)s."
+            "Deze persoon trouwde %(spouse)s in %(partial_date)s te %(place)s%(endnotes)s."
         ),
-        _("This person married %(spouse)s on %(full_date)s in %(place)s%(endnotes)s."),
-        _("This person married %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."),
+        _("Deze persoon trouwde %(spouse)s op %(full_date)s te %(place)s%(endnotes)s."),
+        _("Deze persoon trouwde %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."),
     ],
     Person.MALE: [
-        _("He married %(spouse)s in %(partial_date)s in %(place)s%(endnotes)s."),
-        _("He married %(spouse)s on %(full_date)s in %(place)s%(endnotes)s."),
-        _("He married %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."),
+        _("Hij trouwde %(spouse)s in %(partial_date)s te %(place)s%(endnotes)s."),
+        _("Hij trouwde %(spouse)s op %(full_date)s te %(place)s%(endnotes)s."),
+        _("Hij trouwde %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("She married %(spouse)s in %(partial_date)s in %(place)s%(endnotes)s."),
-        _("She married %(spouse)s on %(full_date)s in %(place)s%(endnotes)s."),
-        _("She married %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."),
+        _("Zij trouwde %(spouse)s in %(partial_date)s te %(place)s%(endnotes)s."),
+        _("Zij trouwde %(spouse)s op %(full_date)s te %(place)s%(endnotes)s."),
+        _("Zij trouwde %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."),
     ],
     "succinct": [
-        _("Married %(spouse)s %(partial_date)s in %(place)s%(endnotes)s."),
-        _("Married %(spouse)s %(full_date)s in %(place)s%(endnotes)s."),
-        _("Married %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."),
+        _("Trouwde %(spouse)s %(partial_date)s te %(place)s%(endnotes)s."),
+        _("Trouwde %(spouse)s %(full_date)s te %(place)s%(endnotes)s."),
+        _("Trouwde %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."),
     ],
 }
 
 marriage_also_date_place = {
     Person.UNKNOWN: [
         _(
-            "This person also married %(spouse)s in %(partial_date)s in %(place)s%(endnotes)s."
+            "Deze persoon trouwde ook met %(spouse)s in %(partial_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "This person also married %(spouse)s on %(full_date)s in %(place)s%(endnotes)s."
+            "Deze persoon trouwde ook met %(spouse)s op %(full_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "This person also married %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."
+            "Deze persoon trouwde ook met %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."
         ),
     ],
     Person.MALE: [
-        _("He also married %(spouse)s in %(partial_date)s in %(place)s%(endnotes)s."),
-        _("He also married %(spouse)s on %(full_date)s in %(place)s%(endnotes)s."),
-        _("He also married %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."),
+        _("Hij trouwde ook met %(spouse)s in %(partial_date)s te %(place)s%(endnotes)s."),
+        _("Hij trouwde ook met %(spouse)s op %(full_date)s te %(place)s%(endnotes)s."),
+        _("Hij trouwde ook met %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("She also married %(spouse)s in %(partial_date)s in %(place)s%(endnotes)s."),
-        _("She also married %(spouse)s on %(full_date)s in %(place)s%(endnotes)s."),
-        _("She also married %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."),
+        _("Zij trouwde ook met %(spouse)s in %(partial_date)s te %(place)s%(endnotes)s."),
+        _("Zij trouwde ook met %(spouse)s op %(full_date)s te %(place)s%(endnotes)s."),
+        _("Zij trouwde ook met %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."),
     ],
     "succinct": [
-        _("Also married %(spouse)s %(partial_date)s in %(place)s%(endnotes)s."),
-        _("Also married %(spouse)s %(full_date)s in %(place)s%(endnotes)s."),
-        _("Also married %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."),
+        _("Trouwde ook met %(spouse)s %(partial_date)s te %(place)s%(endnotes)s."),
+        _("Trouwde ook met %(spouse)s %(full_date)s te %(place)s%(endnotes)s."),
+        _("Trouwde ook met %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."),
     ],
 }
 
 marriage_first_date = {
     Person.UNKNOWN: [
-        _("This person married %(spouse)s in %(partial_date)s%(endnotes)s."),
-        _("This person married %(spouse)s on %(full_date)s%(endnotes)s."),
-        _("This person married %(spouse)s %(modified_date)s%(endnotes)s."),
+        _("Deze persoon trouwde %(spouse)s in %(partial_date)s%(endnotes)s."),
+        _("Deze persoon trouwde %(spouse)s op %(full_date)s%(endnotes)s."),
+        _("Deze persoon trouwde %(spouse)s %(modified_date)s%(endnotes)s."),
     ],
     Person.MALE: [
-        _("He married %(spouse)s in %(partial_date)s%(endnotes)s."),
-        _("He married %(spouse)s on %(full_date)s%(endnotes)s."),
-        _("He married %(spouse)s %(modified_date)s%(endnotes)s."),
+        _("Hij trouwde %(spouse)s in %(partial_date)s%(endnotes)s."),
+        _("Hij trouwde %(spouse)s op %(full_date)s%(endnotes)s."),
+        _("Hij trouwde %(spouse)s %(modified_date)s%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("She married %(spouse)s in %(partial_date)s%(endnotes)s."),
-        _("She married %(spouse)s on %(full_date)s%(endnotes)s."),
-        _("She married %(spouse)s %(modified_date)s%(endnotes)s."),
+        _("Zij trouwde %(spouse)s in %(partial_date)s%(endnotes)s."),
+        _("Zij trouwde %(spouse)s op %(full_date)s%(endnotes)s."),
+        _("Zij trouwde %(spouse)s %(modified_date)s%(endnotes)s."),
     ],
     "succinct": [
-        _("Married %(spouse)s %(partial_date)s%(endnotes)s."),
-        _("Married %(spouse)s %(full_date)s%(endnotes)s."),
-        _("Married %(spouse)s %(modified_date)s%(endnotes)s."),
+        _("Trouwde %(spouse)s %(partial_date)s%(endnotes)s."),
+        _("Trouwde %(spouse)s %(full_date)s%(endnotes)s."),
+        _("Trouwde %(spouse)s %(modified_date)s%(endnotes)s."),
     ],
 }
 
 marriage_also_date = {
     Person.UNKNOWN: [
-        _("This person also married %(spouse)s in %(partial_date)s%(endnotes)s."),
-        _("This person also married %(spouse)s on %(full_date)s%(endnotes)s."),
-        _("This person also married %(spouse)s %(modified_date)s%(endnotes)s."),
+        _("Deze persoon trouwde ook met %(spouse)s in %(partial_date)s%(endnotes)s."),
+        _("Deze persoon trouwde ook met %(spouse)s op %(full_date)s%(endnotes)s."),
+        _("Deze persoon trouwde ook met %(spouse)s %(modified_date)s%(endnotes)s."),
     ],
     Person.MALE: [
-        _("He also married %(spouse)s in %(partial_date)s%(endnotes)s."),
-        _("He also married %(spouse)s on %(full_date)s%(endnotes)s."),
-        _("He also married %(spouse)s %(modified_date)s%(endnotes)s."),
+        _("Hij trouwde ook met %(spouse)s in %(partial_date)s%(endnotes)s."),
+        _("Hij trouwde ook met %(spouse)s op %(full_date)s%(endnotes)s."),
+        _("Hij trouwde ook met %(spouse)s %(modified_date)s%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("She also married %(spouse)s in %(partial_date)s%(endnotes)s."),
-        _("She also married %(spouse)s on %(full_date)s%(endnotes)s."),
-        _("She also married %(spouse)s %(modified_date)s%(endnotes)s."),
+        _("Zij trouwde ook met %(spouse)s in %(partial_date)s%(endnotes)s."),
+        _("Zij trouwde ook met %(spouse)s op %(full_date)s%(endnotes)s."),
+        _("Zij trouwde ook met %(spouse)s %(modified_date)s%(endnotes)s."),
     ],
     "succinct": [
-        _("Also married %(spouse)s %(partial_date)s%(endnotes)s."),
-        _("Also married %(spouse)s %(full_date)s%(endnotes)s."),
-        _("Also married %(spouse)s %(modified_date)s%(endnotes)s."),
+        _("Trouwde ook met %(spouse)s %(partial_date)s%(endnotes)s."),
+        _("Trouwde ook met %(spouse)s %(full_date)s%(endnotes)s."),
+        _("Trouwde ook met %(spouse)s %(modified_date)s%(endnotes)s."),
     ],
 }
 
 marriage_first_place = {
-    Person.UNKNOWN: _("This person married %(spouse)s in %(place)s%(endnotes)s."),
-    Person.MALE: _("He married %(spouse)s in %(place)s%(endnotes)s."),
-    Person.FEMALE: _("She married %(spouse)s in %(place)s%(endnotes)s."),
-    "succinct": _("Married %(spouse)s in %(place)s%(endnotes)s."),
+    Person.UNKNOWN: _("Deze persoon trouwde met %(spouse)s te %(place)s%(endnotes)s."),
+    Person.MALE: _("Hij trouwde met %(spouse)s te %(place)s%(endnotes)s."),
+    Person.FEMALE: _("Zij trouwde met %(spouse)s te %(place)s%(endnotes)s."),
+    "succinct": _("Trouwde met %(spouse)s te %(place)s%(endnotes)s."),
 }
 
 marriage_also_place = {
-    Person.UNKNOWN: _("This person also married %(spouse)s in %(place)s%(endnotes)s."),
-    Person.MALE: _("He also married %(spouse)s in %(place)s%(endnotes)s."),
-    Person.FEMALE: _("She also married %(spouse)s in %(place)s%(endnotes)s."),
-    "succinct": _("Also married %(spouse)s in %(place)s%(endnotes)s."),
+    Person.UNKNOWN: _("Deze persoon trouwde ook met %(spouse)s te %(place)s%(endnotes)s."),
+    Person.MALE: _("Hij trouwde ook met %(spouse)s te %(place)s%(endnotes)s."),
+    Person.FEMALE: _("Zij trouwde ook met %(spouse)s te %(place)s%(endnotes)s."),
+    "succinct": _("Trouwde ook met %(spouse)s te %(place)s%(endnotes)s."),
 }
 
 marriage_first_only = {
-    Person.UNKNOWN: _("This person married %(spouse)s%(endnotes)s."),
-    Person.MALE: _("He married %(spouse)s%(endnotes)s."),
-    Person.FEMALE: _("She married %(spouse)s%(endnotes)s."),
-    "succinct": _("Married %(spouse)s%(endnotes)s."),
+    Person.UNKNOWN: _("Deze persoon trouwde met %(spouse)s%(endnotes)s."),
+    Person.MALE: _("Hij trouwde met %(spouse)s%(endnotes)s."),
+    Person.FEMALE: _("Zij trouwde met %(spouse)s%(endnotes)s."),
+    "succinct": _("Trouwde met %(spouse)s%(endnotes)s."),
 }
 
 marriage_also_only = {
-    Person.UNKNOWN: _("This person also married %(spouse)s%(endnotes)s."),
-    Person.MALE: _("He also married %(spouse)s%(endnotes)s."),
-    Person.FEMALE: _("She also married %(spouse)s%(endnotes)s."),
-    "succinct": _("Also married %(spouse)s%(endnotes)s."),
+    Person.UNKNOWN: _("Deze persoon trouwde ook met %(spouse)s%(endnotes)s."),
+    Person.MALE: _("Hij trouwde ook met %(spouse)s%(endnotes)s."),
+    Person.FEMALE: _("Zij trouwde ook met %(spouse)s%(endnotes)s."),
+    "succinct": _("Trouwde ook met %(spouse)s%(endnotes)s."),
 }
 
 # ------------------------------------------------------------------------
@@ -1252,46 +1252,46 @@ marriage_also_only = {
 unmarried_first_date_place = {
     Person.UNKNOWN: [
         _(
-            "This person had an unmarried relationship with %(spouse)s in %(partial_date)s in %(place)s%(endnotes)s."
+            "Deze persoon had een relatie met  %(spouse)s in %(partial_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "This person had an unmarried relationship with %(spouse)s on %(full_date)s in %(place)s%(endnotes)s."
+            "Deze persoon had een relatie met  %(spouse)s op %(full_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "This person had an unmarried relationship with %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."
+            "Deze persoon had een relatie met  %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."
         ),
     ],
     Person.MALE: [
         _(
-            "He had an unmarried relationship with %(spouse)s in %(partial_date)s in %(place)s%(endnotes)s."
+            "Hij had een relatie met  %(spouse)s in %(partial_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "He had an unmarried relationship with %(spouse)s on %(full_date)s in %(place)s%(endnotes)s."
+            "Hij had een relatie met  %(spouse)s op %(full_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "He had an unmarried relationship with %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."
+            "Hij had een relatie met  %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."
         ),
     ],
     Person.FEMALE: [
         _(
-            "She had an unmarried relationship with %(spouse)s in %(partial_date)s in %(place)s%(endnotes)s."
+            "Zij had een relatie met  %(spouse)s in %(partial_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "She had an unmarried relationship with %(spouse)s on %(full_date)s in %(place)s%(endnotes)s."
+            "Zij had een relatie met  %(spouse)s op %(full_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "She had an unmarried relationship with %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."
+            "Zij had een relatie met  %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."
         ),
     ],
     "succinct": [
         _(
-            "Unmarried relationship with %(spouse)s %(partial_date)s in %(place)s%(endnotes)s."
+            "Relatie met %(spouse)s %(partial_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "Unmarried relationship with %(spouse)s %(full_date)s in %(place)s%(endnotes)s."
+            "Relatie met %(spouse)s %(full_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "Unmarried relationship with %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."
+            "Relatie met %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."
         ),
     ],
 }
@@ -1299,46 +1299,46 @@ unmarried_first_date_place = {
 unmarried_also_date_place = {
     Person.UNKNOWN: [
         _(
-            "This person also had an unmarried relationship with %(spouse)s in %(partial_date)s in %(place)s%(endnotes)s."
+            "Deze persoon had ook een relatie met %(spouse)s in %(partial_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "This person also had an unmarried relationship with %(spouse)s on %(full_date)s in %(place)s%(endnotes)s."
+            "Deze persoon had ook een relatie met %(spouse)s op %(full_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "This person also had an unmarried relationship with %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."
+            "Deze persoon had ook een relatie met %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."
         ),
     ],
     Person.MALE: [
         _(
-            "He also had an unmarried relationship with %(spouse)s in %(partial_date)s in %(place)s%(endnotes)s."
+            "Hij had ook een relatie met %(spouse)s in %(partial_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "He also had an unmarried relationship with %(spouse)s on %(full_date)s in %(place)s%(endnotes)s."
+            "Hij had ook een relatie met %(spouse)s op %(full_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "He also had an unmarried relationship with %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."
+            "Hij had ook een relatie met %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."
         ),
     ],
     Person.FEMALE: [
         _(
-            "She also had an unmarried relationship with %(spouse)s in %(partial_date)s in %(place)s%(endnotes)s."
+            "Zij had ook een relatie met %(spouse)s in %(partial_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "She also had an unmarried relationship with %(spouse)s on %(full_date)s in %(place)s%(endnotes)s."
+            "Zij had ook een relatie met %(spouse)s op %(full_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "She also had an unmarried relationship with %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."
+            "Zij had ook een relatie met %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."
         ),
     ],
     "succinct": [
         _(
-            "Unmarried relationship with %(spouse)s %(partial_date)s in %(place)s%(endnotes)s."
+            "Relatie met %(spouse)s %(partial_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "Unmarried relationship with %(spouse)s %(full_date)s in %(place)s%(endnotes)s."
+            "Relatie met %(spouse)s %(full_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "Unmarried relationship with %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."
+            "Relatie met %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."
         ),
     ],
 }
@@ -1346,221 +1346,221 @@ unmarried_also_date_place = {
 unmarried_first_date = {
     Person.UNKNOWN: [
         _(
-            "This person had an unmarried relationship with %(spouse)s in %(partial_date)s%(endnotes)s."
+            "Deze persoon had een relatie met  %(spouse)s in %(partial_date)s%(endnotes)s."
         ),
         _(
-            "This person had an unmarried relationship with %(spouse)s on %(full_date)s%(endnotes)s."
+            "Deze persoon had een relatie met  %(spouse)s op %(full_date)s%(endnotes)s."
         ),
         _(
-            "This person had an unmarried relationship with %(spouse)s %(modified_date)s%(endnotes)s."
+            "Deze persoon had een relatie met  %(spouse)s %(modified_date)s%(endnotes)s."
         ),
     ],
     Person.MALE: [
         _(
-            "He had an unmarried relationship with %(spouse)s in %(partial_date)s%(endnotes)s."
+            "Hij had een relatie met  %(spouse)s in %(partial_date)s%(endnotes)s."
         ),
         _(
-            "He had an unmarried relationship with %(spouse)s on %(full_date)s%(endnotes)s."
+            "Hij had een relatie met  %(spouse)s op %(full_date)s%(endnotes)s."
         ),
         _(
-            "He had an unmarried relationship with %(spouse)s %(modified_date)s%(endnotes)s."
+            "Hij had een relatie met  %(spouse)s %(modified_date)s%(endnotes)s."
         ),
     ],
     Person.FEMALE: [
         _(
-            "She had an unmarried relationship with %(spouse)s in %(partial_date)s%(endnotes)s."
+            "Zij had een relatie met  %(spouse)s in %(partial_date)s%(endnotes)s."
         ),
         _(
-            "She had an unmarried relationship with %(spouse)s on %(full_date)s%(endnotes)s."
+            "Zij had een relatie met  %(spouse)s op %(full_date)s%(endnotes)s."
         ),
         _(
-            "She had an unmarried relationship with %(spouse)s %(modified_date)s%(endnotes)s."
+            "Zij had een relatie met  %(spouse)s %(modified_date)s%(endnotes)s."
         ),
     ],
     "succinct": [
-        _("Unmarried relationship with %(spouse)s %(partial_date)s%(endnotes)s."),
-        _("Unmarried relationship with %(spouse)s %(full_date)s%(endnotes)s."),
-        _("Unmarried relationship with %(spouse)s %(modified_date)s%(endnotes)s."),
+        _("Relatie met %(spouse)s %(partial_date)s%(endnotes)s."),
+        _("Relatie met %(spouse)s %(full_date)s%(endnotes)s."),
+        _("Relatie met %(spouse)s %(modified_date)s%(endnotes)s."),
     ],
 }
 
 unmarried_also_date = {
     Person.UNKNOWN: [
         _(
-            "This person also had an unmarried relationship with %(spouse)s in %(partial_date)s%(endnotes)s."
+            "Deze persoon had ook een relatie met %(spouse)s in %(partial_date)s%(endnotes)s."
         ),
         _(
-            "This person also had an unmarried relationship with %(spouse)s on %(full_date)s%(endnotes)s."
+            "Deze persoon had ook een relatie met %(spouse)s op %(full_date)s%(endnotes)s."
         ),
         _(
-            "This person also had an unmarried relationship with %(spouse)s %(modified_date)s%(endnotes)s."
+            "Deze persoon had ook een relatie met %(spouse)s %(modified_date)s%(endnotes)s."
         ),
     ],
     Person.MALE: [
         _(
-            "He also had an unmarried relationship with %(spouse)s in %(partial_date)s%(endnotes)s."
+            "Hij had ook een relatie met %(spouse)s in %(partial_date)s%(endnotes)s."
         ),
         _(
-            "He also had an unmarried relationship with %(spouse)s on %(full_date)s%(endnotes)s."
+            "Hij had ook een relatie met %(spouse)s op %(full_date)s%(endnotes)s."
         ),
         _(
-            "He also had an unmarried relationship with %(spouse)s %(modified_date)s%(endnotes)s."
+            "Hij had ook een relatie met %(spouse)s %(modified_date)s%(endnotes)s."
         ),
     ],
     Person.FEMALE: [
         _(
-            "She also had an unmarried relationship with %(spouse)s in %(partial_date)s%(endnotes)s."
+            "Zij had ook een relatie met %(spouse)s in %(partial_date)s%(endnotes)s."
         ),
         _(
-            "She also had an unmarried relationship with %(spouse)s on %(full_date)s%(endnotes)s."
+            "Zij had ook een relatie met %(spouse)s op %(full_date)s%(endnotes)s."
         ),
         _(
-            "She also had an unmarried relationship with %(spouse)s %(modified_date)s%(endnotes)s."
+            "Zij had ook een relatie met %(spouse)s %(modified_date)s%(endnotes)s."
         ),
     ],
     "succinct": [
-        _("Also unmarried relationship with %(spouse)s %(partial_date)s%(endnotes)s."),
-        _("Also unmarried relationship with %(spouse)s %(full_date)s%(endnotes)s."),
-        _("Also unmarried relationship with %(spouse)s %(modified_date)s%(endnotes)s."),
+        _("Ook  relatie met %(spouse)s %(partial_date)s%(endnotes)s."),
+        _("Ook  relatie met %(spouse)s %(full_date)s%(endnotes)s."),
+        _("Ook  relatie met %(spouse)s %(modified_date)s%(endnotes)s."),
     ],
 }
 
 unmarried_first_place = {
     Person.UNKNOWN: _(
-        "This person had an unmarried relationship with %(spouse)s in %(place)s%(endnotes)s."
+        "Deze persoon had een relatie met  %(spouse)s te %(place)s%(endnotes)s."
     ),
     Person.MALE: _(
-        "He had an unmarried relationship with %(spouse)s in %(place)s%(endnotes)s."
+        "Hij had een relatie met  %(spouse)s te %(place)s%(endnotes)s."
     ),
     Person.FEMALE: _(
-        "She had an unmarried relationship with %(spouse)s in %(place)s%(endnotes)s."
+        "Zij had een relatie met  %(spouse)s te %(place)s%(endnotes)s."
     ),
-    "succinct": _("Unmarried relationship with %(spouse)s in %(place)s%(endnotes)s."),
+    "succinct": _("Relatie met %(spouse)s te %(place)s%(endnotes)s."),
 }
 
 unmarried_also_place = {
     Person.UNKNOWN: _(
-        "This person also had an unmarried relationship with %(spouse)s in %(place)s%(endnotes)s."
+        "Deze persoon had ook een relatie met %(spouse)s te %(place)s%(endnotes)s."
     ),
     Person.MALE: _(
-        "He also had an unmarried relationship with %(spouse)s in %(place)s%(endnotes)s."
+        "Hij had ook een relatie met %(spouse)s te %(place)s%(endnotes)s."
     ),
     Person.FEMALE: _(
-        "She also had an unmarried relationship with %(spouse)s in %(place)s%(endnotes)s."
+        "Zij had ook een relatie met %(spouse)s te %(place)s%(endnotes)s."
     ),
-    "succinct": _("Unmarried relationship with %(spouse)s in %(place)s%(endnotes)s."),
+    "succinct": _("Relatie met %(spouse)s te %(place)s%(endnotes)s."),
 }
 
 unmarried_first_only = {
     Person.UNKNOWN: _(
-        "This person had an unmarried relationship with %(spouse)s%(endnotes)s."
+        "Deze persoon had een relatie met  %(spouse)s%(endnotes)s."
     ),
-    Person.MALE: _("He had an unmarried relationship with %(spouse)s%(endnotes)s."),
-    Person.FEMALE: _("She had an unmarried relationship with %(spouse)s%(endnotes)s."),
-    "succinct": _("Unmarried relationship with %(spouse)s%(endnotes)s."),
+    Person.MALE: _("Hij had een relatie met  %(spouse)s%(endnotes)s."),
+    Person.FEMALE: _("Zij had een relatie met  %(spouse)s%(endnotes)s."),
+    "succinct": _("Relatie met %(spouse)s%(endnotes)s."),
 }
 
 unmarried_also_only = {
     Person.UNKNOWN: _(
-        "This person also had an unmarried relationship with %(spouse)s%(endnotes)s."
+        "Deze persoon had ook een relatie met %(spouse)s%(endnotes)s."
     ),
     Person.MALE: _(
-        "He also had an unmarried relationship with %(spouse)s%(endnotes)s."
+        "Hij had ook een relatie met %(spouse)s%(endnotes)s."
     ),
     Person.FEMALE: _(
-        "She also had an unmarried relationship with %(spouse)s%(endnotes)s."
+        "Zij had ook een relatie met %(spouse)s%(endnotes)s."
     ),
-    "succinct": _("Unmarried relationship with %(spouse)s%(endnotes)s."),
+    "succinct": _("Relatie met %(spouse)s%(endnotes)s."),
 }
 
 # ------------------------------------------------------------------------
 #
-# Marriage strings - Relationship type other than MARRIED or UNMARRIED
+# Marriage strings - Relationship type other than trouwde or UNMARRIED
 #                    i.e. CIVIL UNION or CUSTOM
 #
 # ------------------------------------------------------------------------
 relationship_first_date_place = {
     Person.UNKNOWN: [
         _(
-            "This person had a relationship with %(spouse)s in %(partial_date)s in %(place)s%(endnotes)s."
+            "Deze persoon had een relatie met %(spouse)s in %(partial_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "This person had a relationship with %(spouse)s on %(full_date)s in %(place)s%(endnotes)s."
+            "Deze persoon had een relatie met %(spouse)s op %(full_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "This person had a relationship with %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."
+            "Deze persoon had een relatie met %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."
         ),
     ],
     Person.MALE: [
         _(
-            "He had a relationship with %(spouse)s in %(partial_date)s in %(place)s%(endnotes)s."
+            "Hij had een relatie met %(spouse)s in %(partial_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "He had a relationship with %(spouse)s on %(full_date)s in %(place)s%(endnotes)s."
+            "Hij had een relatie met %(spouse)s op %(full_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "He had a relationship with %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."
+            "Hij had een relatie met %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."
         ),
     ],
     Person.FEMALE: [
         _(
-            "She had a relationship with %(spouse)s in %(partial_date)s in %(place)s%(endnotes)s."
+            "Zij had een relatie met %(spouse)s in %(partial_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "She had a relationship with %(spouse)s on %(full_date)s in %(place)s%(endnotes)s."
+            "Zij had een relatie met %(spouse)s op %(full_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "She had a relationship with %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."
+            "Zij had een relatie met %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."
         ),
     ],
     "succinct": [
-        _("Relationship with %(spouse)s %(partial_date)s in %(place)s%(endnotes)s."),
-        _("Relationship with %(spouse)s %(full_date)s in %(place)s%(endnotes)s."),
-        _("Relationship with %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."),
+        _("Relatie met %(spouse)s %(partial_date)s te %(place)s%(endnotes)s."),
+        _("Relatie met %(spouse)s %(full_date)s te %(place)s%(endnotes)s."),
+        _("Relatie met %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."),
     ],
 }
 
 relationship_also_date_place = {
     Person.UNKNOWN: [
         _(
-            "This person also had a relationship with %(spouse)s in %(partial_date)s in %(place)s%(endnotes)s."
+            "Deze persoon had ook een relatie met %(spouse)s in %(partial_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "This person also had a relationship with %(spouse)s on %(full_date)s in %(place)s%(endnotes)s."
+            "Deze persoon had ook een relatie met %(spouse)s op %(full_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "This person also had a relationship with %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."
+            "Deze persoon had ook een relatie met %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."
         ),
     ],
     Person.MALE: [
         _(
-            "He also had a relationship with %(spouse)s in %(partial_date)s in %(place)s%(endnotes)s."
+            "Hij had ook een relatie met %(spouse)s in %(partial_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "He also had a relationship with %(spouse)s on %(full_date)s in %(place)s%(endnotes)s."
+            "Hij had ook een relatie met %(spouse)s op %(full_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "He also had a relationship with %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."
+            "Hij had ook een relatie met %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."
         ),
     ],
     Person.FEMALE: [
         _(
-            "She also had a relationship with %(spouse)s in %(partial_date)s in %(place)s%(endnotes)s."
+            "Zij had ook een relatie met %(spouse)s in %(partial_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "She also had a relationship with %(spouse)s on %(full_date)s in %(place)s%(endnotes)s."
+            "Zij had ook een relatie met %(spouse)s op %(full_date)s te %(place)s%(endnotes)s."
         ),
         _(
-            "She also had a relationship with %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."
+            "Zij had ook een relatie met %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."
         ),
     ],
     "succinct": [
         _(
-            "Also relationship with %(spouse)s %(partial_date)s in %(place)s%(endnotes)s."
+            "Ook relatie met %(spouse)s %(partial_date)s te %(place)s%(endnotes)s."
         ),
-        _("Also relationship with %(spouse)s %(full_date)s in %(place)s%(endnotes)s."),
+        _("Ook relatie met %(spouse)s %(full_date)s te %(place)s%(endnotes)s."),
         _(
-            "Also relationship with %(spouse)s %(modified_date)s in %(place)s%(endnotes)s."
+            "Ook relatie met %(spouse)s %(modified_date)s te %(place)s%(endnotes)s."
         ),
     ],
 }
@@ -1568,103 +1568,103 @@ relationship_also_date_place = {
 relationship_first_date = {
     Person.UNKNOWN: [
         _(
-            "This person had a relationship with %(spouse)s in %(partial_date)s%(endnotes)s."
+            "Deze persoon had een relatie met %(spouse)s in %(partial_date)s%(endnotes)s."
         ),
         _(
-            "This person had a relationship with %(spouse)s on %(full_date)s%(endnotes)s."
+            "Deze persoon had een relatie met %(spouse)s op %(full_date)s%(endnotes)s."
         ),
         _(
-            "This person had a relationship with %(spouse)s %(modified_date)s%(endnotes)s."
+            "Deze persoon had een relatie met %(spouse)s %(modified_date)s%(endnotes)s."
         ),
     ],
     Person.MALE: [
-        _("He had a relationship with %(spouse)s in %(partial_date)s%(endnotes)s."),
-        _("He had a relationship with %(spouse)s on %(full_date)s%(endnotes)s."),
-        _("He had a relationship with %(spouse)s %(modified_date)s%(endnotes)s."),
+        _("Hij had een relatie met %(spouse)s in %(partial_date)s%(endnotes)s."),
+        _("Hij had een relatie met %(spouse)s op %(full_date)s%(endnotes)s."),
+        _("Hij had een relatie met %(spouse)s %(modified_date)s%(endnotes)s."),
     ],
     Person.FEMALE: [
-        _("She had a relationship with %(spouse)s in %(partial_date)s%(endnotes)s."),
-        _("She had a relationship with %(spouse)s on %(full_date)s%(endnotes)s."),
-        _("She had a relationship with %(spouse)s %(modified_date)s%(endnotes)s."),
+        _("Zij had een relatie met %(spouse)s in %(partial_date)s%(endnotes)s."),
+        _("Zij had een relatie met %(spouse)s op %(full_date)s%(endnotes)s."),
+        _("Zij had een relatie met %(spouse)s %(modified_date)s%(endnotes)s."),
     ],
     "succinct": [
-        _("Relationship with %(spouse)s %(partial_date)s%(endnotes)s."),
-        _("Relationship with %(spouse)s %(full_date)s%(endnotes)s."),
-        _("Relationship with %(spouse)s %(modified_date)s%(endnotes)s."),
+        _("Relatie met %(spouse)s %(partial_date)s%(endnotes)s."),
+        _("Relatie met %(spouse)s %(full_date)s%(endnotes)s."),
+        _("Relatie met %(spouse)s %(modified_date)s%(endnotes)s."),
     ],
 }
 
 relationship_also_date = {
     Person.UNKNOWN: [
         _(
-            "This person also had a relationship with %(spouse)s in %(partial_date)s%(endnotes)s."
+            "Deze persoon had ook een relatie met %(spouse)s in %(partial_date)s%(endnotes)s."
         ),
         _(
-            "This person also had a relationship with %(spouse)s on %(full_date)s%(endnotes)s."
+            "Deze persoon had ook een relatie met %(spouse)s op %(full_date)s%(endnotes)s."
         ),
         _(
-            "This person also had a relationship with %(spouse)s %(modified_date)s%(endnotes)s."
+            "Deze persoon had ook een relatie met %(spouse)s %(modified_date)s%(endnotes)s."
         ),
     ],
     Person.MALE: [
         _(
-            "He also had a relationship with %(spouse)s in %(partial_date)s%(endnotes)s."
+            "Hij had ook een relatie met %(spouse)s in %(partial_date)s%(endnotes)s."
         ),
-        _("He also had a relationship with %(spouse)s on %(full_date)s%(endnotes)s."),
-        _("He also had a relationship with %(spouse)s %(modified_date)s%(endnotes)s."),
+        _("Hij had ook een relatie met %(spouse)s op %(full_date)s%(endnotes)s."),
+        _("Hij had ook een relatie met %(spouse)s %(modified_date)s%(endnotes)s."),
     ],
     Person.FEMALE: [
         _(
-            "She also had a relationship with %(spouse)s in %(partial_date)s%(endnotes)s."
+            "Zij had ook een relatie met %(spouse)s in %(partial_date)s%(endnotes)s."
         ),
-        _("She also had a relationship with %(spouse)s on %(full_date)s%(endnotes)s."),
-        _("She also had a relationship with %(spouse)s %(modified_date)s%(endnotes)s."),
+        _("Zij had ook een relatie met %(spouse)s op %(full_date)s%(endnotes)s."),
+        _("Zij had ook een relatie met %(spouse)s %(modified_date)s%(endnotes)s."),
     ],
     "succinct": [
-        _("Also relationship with %(spouse)s %(partial_date)s%(endnotes)s."),
-        _("Also relationship with %(spouse)s %(full_date)s%(endnotes)s."),
-        _("Also relationship with %(spouse)s %(modified_date)s%(endnotes)s."),
+        _("Ook relatie met %(spouse)s %(partial_date)s%(endnotes)s."),
+        _("Ook relatie met %(spouse)s %(full_date)s%(endnotes)s."),
+        _("Ook relatie met %(spouse)s %(modified_date)s%(endnotes)s."),
     ],
 }
 
 relationship_first_place = {
     Person.UNKNOWN: _(
-        "This person had a relationship with %(spouse)s in %(place)s%(endnotes)s."
+        "Deze persoon had een relatie met %(spouse)s te %(place)s%(endnotes)s."
     ),
-    Person.MALE: _("He had a relationship with %(spouse)s in %(place)s%(endnotes)s."),
+    Person.MALE: _("Hij had een relatie met %(spouse)s te %(place)s%(endnotes)s."),
     Person.FEMALE: _(
-        "She had a relationship with %(spouse)s in %(place)s%(endnotes)s."
+        "Zij had een relatie met %(spouse)s te %(place)s%(endnotes)s."
     ),
-    "succinct": _("Relationship with %(spouse)s in %(place)s%(endnotes)s."),
+    "succinct": _("Relatie met %(spouse)s te %(place)s%(endnotes)s."),
 }
 
 relationship_also_place = {
     Person.UNKNOWN: _(
-        "This person also had a relationship with %(spouse)s in %(place)s%(endnotes)s."
+        "Deze persoon had ook een relatie met %(spouse)s te %(place)s%(endnotes)s."
     ),
     Person.MALE: _(
-        "He also had a relationship with %(spouse)s in %(place)s%(endnotes)s."
+        "Hij had ook een relatie met %(spouse)s te %(place)s%(endnotes)s."
     ),
     Person.FEMALE: _(
-        "She also had a relationship with %(spouse)s in %(place)s%(endnotes)s."
+        "Zij had ook een relatie met %(spouse)s te %(place)s%(endnotes)s."
     ),
-    "succinct": _("Also relationship with %(spouse)s in %(place)s%(endnotes)s."),
+    "succinct": _("Ook relatie met %(spouse)s te %(place)s%(endnotes)s."),
 }
 
 relationship_first_only = {
-    Person.UNKNOWN: _("This person had a relationship with %(spouse)s%(endnotes)s."),
-    Person.MALE: _("He had a relationship with %(spouse)s%(endnotes)s."),
-    Person.FEMALE: _("She had a relationship with %(spouse)s%(endnotes)s."),
-    "succinct": _("Relationship with %(spouse)s%(endnotes)s."),
+    Person.UNKNOWN: _("Deze persoon had een relatie met %(spouse)s%(endnotes)s."),
+    Person.MALE: _("Hij had een relatie met %(spouse)s%(endnotes)s."),
+    Person.FEMALE: _("Zij had een relatie met %(spouse)s%(endnotes)s."),
+    "succinct": _("Relatie met %(spouse)s%(endnotes)s."),
 }
 
 relationship_also_only = {
     Person.UNKNOWN: _(
-        "This person also had a relationship with %(spouse)s%(endnotes)s."
+        "Deze persoon had ook een relatie met %(spouse)s%(endnotes)s."
     ),
-    Person.MALE: _("He also had a relationship with %(spouse)s%(endnotes)s."),
-    Person.FEMALE: _("She also had a relationship with %(spouse)s%(endnotes)s."),
-    "succinct": _("Also relationship with %(spouse)s%(endnotes)s."),
+    Person.MALE: _("Hij had ook een relatie met %(spouse)s%(endnotes)s."),
+    Person.FEMALE: _("Zij had ook een relatie met %(spouse)s%(endnotes)s."),
+    "succinct": _("Ook relatie met %(spouse)s%(endnotes)s."),
 }
 
 
@@ -1755,7 +1755,7 @@ class Narrator:
         else:
             self.__first_name_used = True  # but use a pronoun if no name
 
-    def get_born_string(self):
+    def get_born_string(self, person=""):
         """
         Get a string narrating the birth of the subject.
         Example sentences:
@@ -1799,7 +1799,7 @@ class Narrator:
                 bdate_full = bdate_obj and bdate_obj.get_day_valid()
                 bdate_mod = bdate_obj and bdate_obj.get_modifier() != Date.MOD_NONE
 
-        if self._locale.locale_code() == "he":
+        if self._locale.locale_code() == "Hij":
             bdate = convert_prefix(bdate)
             bplace = convert_prefix(bplace)
 
@@ -1871,8 +1871,8 @@ class Narrator:
             Person died on Date at the age of 'age'
             Person died on Date in Place
             Person died on Date in Place at the age of 'age'
-            Person died in Place
-            Person died in Place at the age of 'age'
+            Person overleed in Place
+            Person overleed in Place at the age of 'age'
             Person died
             ''
         where 'age' string is an advanced age calculation.
@@ -1919,7 +1919,7 @@ class Narrator:
             age = 0
             age_index = _AGE_INDEX_NO_AGE
 
-        if self._locale.locale_code() == "he":
+        if self._locale.locale_code() == "Hij":
             ddate = convert_prefix(ddate)
             dplace = convert_prefix(dplace)
 
@@ -2040,7 +2040,7 @@ class Narrator:
         else:
             return text
 
-        if self._locale.locale_code() == "he":
+        if self._locale.locale_code() == "Hij":
             bdate = convert_prefix(bdate)
             bplace = convert_prefix(bplace)
 
@@ -2105,11 +2105,11 @@ class Narrator:
         """
         Get a string narrating the baptism of the subject.
         Example sentences:
-            Person was baptized on Date.
-            Person was baptized on Date in Place.
-            Person was baptized in Month_Year.
-            Person was baptized in Month_Year in Place.
-            Person was baptized in Place.
+            Person werd gedoopt op Date.
+            Person werd gedoopt op Date in Place.
+            Person werd gedoopt in Month_Year.
+            Person werd gedoopt in Month_Year in Place.
+            Person werd gedoopt in Place.
             ''
 
         :returns: A sentence about the subject's baptism.
@@ -2157,7 +2157,7 @@ class Narrator:
         else:
             return text
 
-        if self._locale.locale_code() == "he":
+        if self._locale.locale_code() == "Hij":
             bdate = convert_prefix(bdate)
             bplace = convert_prefix(bplace)
 
@@ -2221,7 +2221,7 @@ class Narrator:
         if event.get_description():
             if text:
                 text += ". "
-            text += event.get_description()
+            text += event.get_description() + " "
         return text
     
     def get_witnesses_string(self):
@@ -2240,7 +2240,7 @@ class Narrator:
                 note = self.__db.get_note_from_handle(notehandle)
                 break
             if note:
-                text = "{Get: " + str(note.get_styledtext()) + ".} "
+                text = "{Get: " + str(note.get_styledtext()) + "} "
                 return text
             else:
                 return None
@@ -2271,11 +2271,11 @@ class Narrator:
         """
         Get a string narrating the christening of the subject.
         Example sentences:
-            Person was christened on Date.
-            Person was christened on Date in Place.
-            Person was christened in Month_Year.
-            Person was christened in Month_Year in Place.
-            Person was christened in Place.
+            Person werd gedoopt op Date.
+            Person werd gedoopt op Date in Place.
+            Person werd gedoopt in Month_Year.
+            Person werd gedoopt in Month_Year in Place.
+            Person werd gedoopt in Place.
             ''
 
         :returns: A sentence about the subject's christening.
@@ -2311,6 +2311,7 @@ class Narrator:
         if christening:
             if self.__use_fulldate:
                 cdate = self.__get_date(christening.get_date_object())
+                cdate = cdate.replace(" ", "\xa0")
             else:
                 cdate = christening.get_date_object().get_year()
             cplace_handle = christening.get_place_handle()
@@ -2325,7 +2326,7 @@ class Narrator:
         else:
             return text
 
-        if self._locale.locale_code() == "he":
+        if self._locale.locale_code() == "He":
             cdate = convert_prefix(cdate)
             cplace = convert_prefix(cplace)
 
@@ -2388,10 +2389,10 @@ class Narrator:
         """
         Get a string narrating the marriage of the subject.
         Example sentences:
-            Person was married to Spouse on Date.
-            Person was married to Spouse.
-            Person was also married to Spouse on Date.
-            Person was also married to Spouse.
+            Person was trouwde to Spouse on Date.
+            Person was trouwde to Spouse.
+            Person was trouwde ook met to Spouse on Date.
+            Person was trouwde ook met to Spouse.
             ""
 
         :param family: The family that contains the Spouse for this marriage.
@@ -2435,7 +2436,7 @@ class Narrator:
                 place = _pd.display_event(self.__db, event, fmt=self._place_format)
         relationship = family.get_relationship()
 
-        if self._locale.locale_code() == "he":
+        if self._locale.locale_code() == "Hij":
             date = convert_prefix(date)
             place = convert_prefix(place)
 
@@ -2462,7 +2463,7 @@ class Narrator:
 
         # This would be much simpler, excepting for translation considerations
         # Currently support FamilyRelType's:
-        #     MARRIED     : civil and/or religious
+        #     trouwde     : civil and/or religious
         #     UNMARRIED
         #     CIVIL UNION : described as a relationship
         #     UNKNOWN     : also described as a relationship
@@ -2593,13 +2594,13 @@ class Narrator:
             text = text + " "
         return text
 
-    def get_child_string(self, father_name="", mother_name=""):
+    def get_child_string(self, father_name="", mother_name="", gender=""):
         """
         Get a string narrating the relationship to the parents of the subject.
         Missing information will be omitted without loss of readability.
         Example sentences:
-            Person was the son of father_name and mother_name.
-            Person was the daughter of father_name and mother_name.
+            Person was de zoon van father_name and mother_name.
+            Person was de dochter van father_name and mother_name.
             ""
 
         :param father_name: The name of the Subjects' father.
@@ -2626,8 +2627,9 @@ class Narrator:
             self.__first_name_used = True
         else:
             index = _NAME_INDEX_EXCLUDE_NAME
-
-        gender = self.__get_gender()
+        
+        if gender == "":
+            gender = self.__get_gender()
 
         text = ""
         if mother_name and father_name and self.__verbose:
