@@ -342,15 +342,38 @@ class TNGDetDescendantReport(Report):
                     self.dnumber[person_handle] = mod_reg_number
                     mod_reg_number += 1
 
-    def apply_none_filter(self, person_handle):
-        """No Numbering"""
+    def apply_tng_filter_aux(self, person_handle, index, cur_gen=1):
+        """Filter for TNG numbering"""
+        if (not person_handle) or (cur_gen > self.max_generations):
+            return
+        self.map[index] = person_handle
+
+        if len(self.gen_keys) < cur_gen:
+            self.gen_keys.append([index])
+        else:
+            self.gen_keys[cur_gen - 1].append(index)
+
+        person = self._db.get_person_from_handle(person_handle)
+
+        for family_handle in person.get_family_handle_list():
+            family = self._db.get_family_from_handle(family_handle)
+            for child_ref in family.get_child_ref_list():
+                _ix = max(self.map)
+                self.apply_tng_filter_aux(child_ref.ref, _ix + 1, cur_gen + 1)
+
+    def apply_tng_filter(self, person_handle):
+        """TNG preferred"""
         self.apply_mod_reg_filter_aux(person_handle, 1, 1)
         mod_reg_number = 1
+        generatie = 0
         for keys in self.gen_keys:
+            generatie = generatie + 1
+            volgorde = 0
             for key in keys:
                 person_handle = self.map[key]
                 if person_handle not in self.dnumber:
-                    self.dnumber[person_handle] = mod_reg_number
+                    volgorde = volgorde + 1
+                    self.dnumber[person_handle] = str(utils.roman(generatie).upper()) + "-" + str(volgorde)
                     mod_reg_number += 1
 
     def write_report(self):
@@ -365,8 +388,8 @@ class TNGDetDescendantReport(Report):
             self.apply_daboville_filter(self.center_person.get_handle(), 1, "1")
         elif self.numbering == "Record (Modified Register)":
             self.apply_mod_reg_filter(self.center_person.get_handle())
-        elif self.numbering == "None":
-            self.apply_none_filter(self.center_person.get_handle())
+        elif self.numbering == "TNG":
+            self.apply_tng_filter(self.center_person.get_handle())
         else:
             raise AttributeError("no such numbering: '%s'" % self.numbering)
 
@@ -474,6 +497,8 @@ class TNGDetDescendantReport(Report):
             return
         else:
             self.numbers_printed.append(val)
+        
+       # val = utils.roman(generation).upper() + "-"
 
         self.doc.start_paragraph("DDR-First-Entry", "%s." % val)
 
@@ -757,7 +782,7 @@ class TNGDetDescendantReport(Report):
             else:
                 prefix = ""
 
-            if child_handle in self.dnumber and self.numbering != "None":
+            if child_handle in self.dnumber and self.numbering != "TNG":
                 self.doc.start_paragraph(
                     "DDR-ChildList",
                     prefix
@@ -768,7 +793,7 @@ class TNGDetDescendantReport(Report):
                 )
             else:
                 self.doc.start_paragraph(
-                    "DDR-ChildList", prefix + str(cnt) + "."
+                    "DDR-ChildList", str(cnt) + "."
                 )
             cnt += 1
 
@@ -789,6 +814,7 @@ class TNGDetDescendantReport(Report):
             self.doc.write_text_citation(
                 self.__narrator.get_witnesses_string()
                 )
+            
             # Write Death and/or Burial text only if not probably alive
             if not probably_alive(child, self.database):
                 self.doc.write_text_citation(
@@ -811,6 +837,9 @@ class TNGDetDescendantReport(Report):
                             child_family, is_first_family, self._name_display
                         )
                     )
+                    self.doc.start_bold()
+                    self.doc.write_text_citation(" Zie: " + str(self.dnumber[child_handle]))
+                    self.doc.end_bold()
                     is_first_family = False
             self.doc.end_paragraph()
 
@@ -1106,7 +1135,7 @@ class TNGDetDescendantOptions(MenuReportOptions):
                     "Record (Modified Register)",
                     _("Record (Modified Register) numbering"),
                 ),
-                ("None", _("No numbering system")),
+                ("TNG", _("TNG preferred")),
             ]
         )
         numbering.set_help(_("The numbering system to be used"))
