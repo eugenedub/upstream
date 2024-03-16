@@ -537,6 +537,7 @@ class TNGDetDescendantReport(Report):
         place = _pd.display_event(self._db, event, self.place_format)
 
         self.doc.start_paragraph("DDR-MoreDetails")
+        print("start 543")
         event_name = self._get_type(event.get_type())
         if date and place:
             # Translators: needed for Arabic, ignore otherwise
@@ -582,6 +583,7 @@ class TNGDetDescendantReport(Report):
             self.doc.write_text_citation(text)
 
         self.doc.end_paragraph()
+        print("end")
 
         if self.inc_notes:
             # if the event or event reference has a note attached to it,
@@ -621,15 +623,13 @@ class TNGDetDescendantReport(Report):
                 father_name = ""
                 father_mark = ""
             text = self.__narrator.get_child_string(father_name, mother_name, person.get_gender())
-            self.doc.start_paragraph("DDR-Entry")
             if text:
-                print(str(text))
                 self.doc.write_text(text)
                 if father_mark:
                     self.doc.write_text("", father_mark)
                 if mother_mark:
                     self.doc.write_text("", mother_mark)
-            self.doc.end_paragraph()
+
 
     def write_marriage(self, person):
         """
@@ -649,13 +649,12 @@ class TNGDetDescendantReport(Report):
             text = self.__narrator.get_married_string(
                 family, is_first, self._name_display
             )
-            self.doc.start_paragraph("DDR-Entry")
             if text:
                 self.doc.write_text_citation(text, spouse_mark)
                 if self.want_ids:
                     self.doc.write_text("(%s)" % family.get_gramps_id())
                 is_first = False
-            self.doc.end_paragraph()
+
             self.__write_mate(person, family)
 
     def __write_mate(self, person, family):
@@ -669,11 +668,11 @@ class TNGDetDescendantReport(Report):
         
         if mate_handle:
             
-            person = self._db.get_person_from_handle(mate_handle)
-            self.__write_parents(person)
-            self.doc.start_paragraph("DDR-Entry")
+            mate = self._db.get_person_from_handle(mate_handle)
+            self.__write_parents(mate)
+            self.__narrator.set_subject(mate)
             text = ""
-            text = self.__narrator.get_born_string(person)
+            text = self.__narrator.get_born_string()
             text = text + self.__narrator.get_baptised_string()
             text = text + self.__narrator.get_christened_string()
 
@@ -681,10 +680,8 @@ class TNGDetDescendantReport(Report):
             if not probably_alive(person, self.database):
                 text = text + self.__narrator.get_died_string()
                 text = text + self.__narrator.get_buried_string()
-            print("mate text: " + text)
             if text:
                 self.doc.write_text_citation(text)
-            self.doc.end_paragraph()
             
         """
             self.doc.start_paragraph("DDR-MoreHeader")
@@ -895,6 +892,7 @@ class TNGDetDescendantReport(Report):
                 % {"mother_name": mother_name, "father_name": father_name}
             )
             self.doc.end_paragraph()
+            print("end")
 
         for attr in attrs:
             self.doc.start_paragraph("DDR-MoreDetails")
@@ -906,6 +904,7 @@ class TNGDetDescendantReport(Report):
             }
             self.doc.write_text_citation(text)
             self.doc.end_paragraph()
+
 
             if self.inc_notes:
                 # if the attr or attr reference has a note attached to it,
@@ -919,6 +918,7 @@ class TNGDetDescendantReport(Report):
 
     def write_person_info(self, person):
         """write out all the person's information"""
+        self.doc.start_paragraph("DDR-Entry")
         name = self._name_display.display(person)
         if not name:
             name = self._("Unknown")
@@ -929,11 +929,9 @@ class TNGDetDescendantReport(Report):
             photo = plist[0]
             utils.insert_image(self._db, self.doc, photo, self._user)
 
-        
-
         if not self.verbose:
             self.__write_parents(person)
-        self.doc.start_paragraph("DDR-Entry")
+        
 
         text = self.__narrator.get_born_string()
         if text:
@@ -957,12 +955,13 @@ class TNGDetDescendantReport(Report):
             text = self.__narrator.get_buried_string()
             if text:
                 self.doc.write_text_citation(text)
-        self.doc.end_paragraph()
+      
+    
         if self.verbose:
             self.__write_parents(person)
         if self.mainperson != False:
             self.write_marriage(person)
-
+        self.doc.end_paragraph()
  
 
         notelist = person.get_note_list()
@@ -971,6 +970,7 @@ class TNGDetDescendantReport(Report):
             # feature request 2356: avoid genitive form
             self.doc.write_text(self._("Notes for %s") % name)
             self.doc.end_paragraph()
+            print("end")
             for notehandle in notelist:
                 note = self._db.get_note_from_handle(notehandle)
                 self.doc.write_styled_note(
@@ -985,12 +985,14 @@ class TNGDetDescendantReport(Report):
             for alt_name in person.get_alternate_names():
                 if first:
                     self.doc.start_paragraph("DDR-MoreHeader")
+                    print("start 1005")
                     self.doc.write_text(
                         self._("More about %(person_name)s:") % {"person_name": name}
                     )
                     self.doc.end_paragraph()
                     first = False
                 self.doc.start_paragraph("DDR-MoreDetails")
+                print("start 1012")
                 atype = self._get_type(alt_name.get_type())
                 aname = alt_name.get_regular_name()
                 self.doc.write_text_citation(
@@ -1002,15 +1004,18 @@ class TNGDetDescendantReport(Report):
                     }
                 )
                 self.doc.end_paragraph()
+                print("end")
 
         if self.inc_events:
             for event_ref in person.get_primary_event_ref_list():
                 if first:
                     self.doc.start_paragraph("DDR-MoreHeader")
+                    print("start 1029")
                     self.doc.write_text(
                         self._("More about %(person_name)s:") % {"person_name": name}
                     )
                     self.doc.end_paragraph()
+                    print("end")
                     first = 0
 
                 self.write_event(event_ref)
@@ -1019,12 +1024,15 @@ class TNGDetDescendantReport(Report):
             for addr in person.get_address_list():
                 if first:
                     self.doc.start_paragraph("DDR-MoreHeader")
+                    print("start 1042")
                     self.doc.write_text(
                         self._("More about %(person_name)s:") % {"person_name": name}
                     )
                     self.doc.end_paragraph()
+                    print("end")
                     first = False
                 self.doc.start_paragraph("DDR-MoreDetails")
+                print("start 1049")
 
                 text = utils.get_address_str(addr)
 
@@ -1045,6 +1053,7 @@ class TNGDetDescendantReport(Report):
             attrs = person.get_attribute_list()
             if first and attrs:
                 self.doc.start_paragraph("DDR-MoreHeader")
+                print("start 1070")
                 self.doc.write_text(
                     self._("More about %(person_name)s:") % {"person_name": name}
                 )
@@ -1053,6 +1062,7 @@ class TNGDetDescendantReport(Report):
 
             for attr in attrs:
                 self.doc.start_paragraph("DDR-MoreDetails")
+                print("start 1079")
                 attr_name = attr.get_type().type2base()
                 # Translators: needed for French, ignore otherwise
                 text = self._("%(type)s: %(value)s%(endnotes)s") % {

@@ -1755,7 +1755,7 @@ class Narrator:
         else:
             self.__first_name_used = True  # but use a pronoun if no name
 
-    def get_born_string(self, person=""):
+    def get_born_string(self):
         """
         Get a string narrating the birth of the subject.
         Example sentences:
