@@ -108,111 +108,111 @@ def _(message):
 born_full_date_with_place = [
     {
         Person.UNKNOWN: _(
-            "%(unknown_gender_name)s was born on %(birth_date)s in %(birth_place)s."
+            "%(unknown_gender_name)s geboren op %(birth_date)s te %(birth_place)s."
         ),
-        Person.MALE: _("%(male_name)s was born on %(birth_date)s in %(birth_place)s."),
+        Person.MALE: _("%(male_name)s geboren op %(birth_date)s te %(birth_place)s."),
         Person.FEMALE: _(
-            "%(female_name)s was born on %(birth_date)s in %(birth_place)s."
+            "%(female_name)s geboren op %(birth_date)s te %(birth_place)s."
         ),
     },
     {
-        Person.UNKNOWN: _("Deze persoon was born on %(birth_date)s in %(birth_place)s."),
-        Person.MALE: _("Hij was born on %(birth_date)s in %(birth_place)s."),
-        Person.FEMALE: _("Zij was born on %(birth_date)s in %(birth_place)s."),
+        Person.UNKNOWN: _("Deze persoon werd geboren op %(birth_date)s te %(birth_place)s."),
+        Person.MALE: _("Hij werd geboren op %(birth_date)s te %(birth_place)s."),
+        Person.FEMALE: _("Zij werd geboren op %(birth_date)s te %(birth_place)s."),
     },
-    _("Born %(birth_date)s in %(birth_place)s."),
+    _("Geboren %(birth_date)s te %(birth_place)s."),
 ]
 
 born_modified_date_with_place = [
     {
         Person.UNKNOWN: _(
-            "%(unknown_gender_name)s was born %(modified_date)s in %(birth_place)s."
+            "%(unknown_gender_name)s geboren %(modified_date)s te %(birth_place)s."
         ),
-        Person.MALE: _("%(male_name)s was born %(modified_date)s in %(birth_place)s."),
+        Person.MALE: _("%(male_name)s geboren %(modified_date)s te %(birth_place)s."),
         Person.FEMALE: _(
-            "%(female_name)s was born %(modified_date)s in %(birth_place)s."
+            "%(female_name)s geboren %(modified_date)s te %(birth_place)s."
         ),
     },
     {
-        Person.UNKNOWN: _("Deze persoon was born %(modified_date)s in %(birth_place)s."),
-        Person.MALE: _("Hij was born %(modified_date)s in %(birth_place)s."),
-        Person.FEMALE: _("Zij was born %(modified_date)s in %(birth_place)s."),
+        Person.UNKNOWN: _("Deze persoon werd geboren %(modified_date)s te %(birth_place)s."),
+        Person.MALE: _("Hij werd geboren %(modified_date)s te %(birth_place)s."),
+        Person.FEMALE: _("Zij werd geboren %(modified_date)s te %(birth_place)s."),
     },
-    _("Born %(modified_date)s in %(birth_place)s."),
+    _("Geboren %(modified_date)s te %(birth_place)s."),
 ]
 
 born_full_date_no_place = [
     {
-        Person.UNKNOWN: _("%(unknown_gender_name)s was born on %(birth_date)s."),
-        Person.MALE: _("%(male_name)s was born on %(birth_date)s."),
-        Person.FEMALE: _("%(female_name)s was born on %(birth_date)s."),
+        Person.UNKNOWN: _("%(unknown_gender_name)s geboren op %(birth_date)s."),
+        Person.MALE: _("%(male_name)s geboren op %(birth_date)s."),
+        Person.FEMALE: _("%(female_name)s geboren op %(birth_date)s."),
     },
     {
-        Person.UNKNOWN: _("Deze persoon was born on %(birth_date)s."),
-        Person.MALE: _("Hij was born on %(birth_date)s."),
-        Person.FEMALE: _("Zij was born on %(birth_date)s."),
+        Person.UNKNOWN: _("Deze persoon werd geboren op %(birth_date)s."),
+        Person.MALE: _("Hij werd geboren op %(birth_date)s."),
+        Person.FEMALE: _("Zij werd geboren op %(birth_date)s."),
     },
-    _("Born %(birth_date)s."),
+    _("Geboren %(birth_date)s."),
 ]
 
 born_modified_date_no_place = [
     {
-        Person.UNKNOWN: _("%(unknown_gender_name)s was born %(modified_date)s."),
-        Person.MALE: _("%(male_name)s was born %(modified_date)s."),
-        Person.FEMALE: _("%(female_name)s was born %(modified_date)s."),
+        Person.UNKNOWN: _("%(unknown_gender_name)s geboren %(modified_date)s."),
+        Person.MALE: _("%(male_name)s geboren %(modified_date)s."),
+        Person.FEMALE: _("%(female_name)s geboren %(modified_date)s."),
     },
     {
-        Person.UNKNOWN: _("Deze persoon was born %(modified_date)s."),
-        Person.MALE: _("Hij was born %(modified_date)s."),
-        Person.FEMALE: _("Zij was born %(modified_date)s."),
+        Person.UNKNOWN: _("Deze werd persoon geboren %(modified_date)s."),
+        Person.MALE: _("Hij werd geboren %(modified_date)s."),
+        Person.FEMALE: _("Zij werd geboren %(modified_date)s."),
     },
-    _("Born %(modified_date)s."),
+    _("Geboren %(modified_date)s."),
 ]
 
 born_partial_date_with_place = [
     {
         Person.UNKNOWN: _(
-            "%(unknown_gender_name)s was born in %(month_year)s in %(birth_place)s."
+            "%(unknown_gender_name)s geboren in %(month_year)s te %(birth_place)s."
         ),
-        Person.MALE: _("%(male_name)s was born in %(month_year)s in %(birth_place)s."),
+        Person.MALE: _("%(male_name)s geboren in %(month_year)s te %(birth_place)s."),
         Person.FEMALE: _(
-            "%(female_name)s was born in %(month_year)s in %(birth_place)s."
+            "%(female_name)s geboren in %(month_year)s te %(birth_place)s."
         ),
     },
     {
-        Person.UNKNOWN: _("Deze persoon was born in %(month_year)s in %(birth_place)s."),
-        Person.MALE: _("Hij was born in %(month_year)s in %(birth_place)s."),
-        Person.FEMALE: _("Zij was born in %(month_year)s in %(birth_place)s."),
+        Person.UNKNOWN: _("Deze persoon werd geboren in %(month_year)s te %(birth_place)s."),
+        Person.MALE: _("Hij werd geboren in %(month_year)s te %(birth_place)s."),
+        Person.FEMALE: _("Zij werd geboren in %(month_year)s te %(birth_place)s."),
     },
-    _("Born %(month_year)s in %(birth_place)s."),
+    _("Geboren %(month_year)s te %(birth_place)s."),
 ]
 
 born_partial_date_no_place = [
     {
-        Person.UNKNOWN: _("%(unknown_gender_name)s was born in %(month_year)s."),
-        Person.MALE: _("%(male_name)s was born in %(month_year)s."),
-        Person.FEMALE: _("%(female_name)s was born in %(month_year)s."),
+        Person.UNKNOWN: _("%(unknown_gender_name)s geboren in %(month_year)s."),
+        Person.MALE: _("%(male_name)s geboren in %(month_year)s."),
+        Person.FEMALE: _("%(female_name)s geboren in %(month_year)s."),
     },
     {
-        Person.UNKNOWN: _("Deze persoon was born in %(month_year)s."),
-        Person.MALE: _("Hij was born in %(month_year)s."),
-        Person.FEMALE: _("Zij was born in %(month_year)s."),
+        Person.UNKNOWN: _("Deze persoon werd geboren in %(month_year)s."),
+        Person.MALE: _("Hij werd geboren in %(month_year)s."),
+        Person.FEMALE: _("Zij werd geboren in %(month_year)s."),
     },
-    _("Born %(month_year)s."),
+    _("Geboren %(month_year)s."),
 ]
 
 born_no_date_with_place = [
     {
-        Person.UNKNOWN: _("%(unknown_gender_name)s was born in %(birth_place)s."),
-        Person.MALE: _("%(male_name)s was born in %(birth_place)s."),
-        Person.FEMALE: _("%(female_name)s was born in %(birth_place)s."),
+        Person.UNKNOWN: _("%(unknown_gender_name)s geboren te %(birth_place)s."),
+        Person.MALE: _("%(male_name)s geboren te %(birth_place)s."),
+        Person.FEMALE: _("%(female_name)s geboren te %(birth_place)s."),
     },
     {
-        Person.UNKNOWN: _("Deze persoon was born in %(birth_place)s."),
-        Person.MALE: _("Hij was born in %(birth_place)s."),
-        Person.FEMALE: _("Zij was born in %(birth_place)s."),
+        Person.UNKNOWN: _("Deze persoon werd geboren te %(birth_place)s."),
+        Person.MALE: _("Hij werd geboren te %(birth_place)s."),
+        Person.FEMALE: _("Zij werd geboren te %(birth_place)s."),
     },
-    _("Born in %(birth_place)s."),
+    _("Geboren te %(birth_place)s."),
 ]
 
 # ------------------------------------------------------------------------
@@ -1759,9 +1759,9 @@ class Narrator:
         """
         Get a string narrating the birth of the subject.
         Example sentences:
-            Person was born on Date.
-            Person was born on Date in Place.
-            Person was born in Place.
+            Person geboren op Date.
+            Person geboren op Date in Place.
+            Person geboren in Place.
             ''
 
         :returns: A sentence about the subject's birth.

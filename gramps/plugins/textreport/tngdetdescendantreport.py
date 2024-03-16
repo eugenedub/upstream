@@ -377,7 +377,7 @@ class TNGDetDescendantReport(Report):
         self.doc.start_paragraph("DDR-Title")
 
         # feature request 2356: avoid genitive form
-        title = self._("Descendant Report for %(person_name)s") % {"person_name": name}
+        title = self._("Afstammelingen van %(person_name)s") % {"person_name": name}
         mark = IndexMark(title, INDEX_TYPE_TOC, 1)
         self.doc.write_text(title, mark)
         self.doc.end_paragraph()
@@ -389,7 +389,7 @@ class TNGDetDescendantReport(Report):
                 if self.pgbrk and generation > 0:
                     self.doc.page_break()
                 self.doc.start_paragraph("DDR-Generation")
-                text = self._("Generation %d") % (generation + 1)
+                text = self._("Generatie %d") % (generation + 1)
                 mark = IndexMark(text, INDEX_TYPE_TOC, 2)
                 self.doc.write_text(text, mark)
                 self.doc.end_paragraph()
@@ -506,12 +506,7 @@ class TNGDetDescendantReport(Report):
             or self.inc_events
             or self.inc_attrs
         ):
-            """
-            for family_handle in person.get_family_handle_list():
-                family = self._db.get_family_from_handle(family_handle)
-                if self.inc_mates:
-                    self.__write_mate(person, family)
-            """
+ 
             for family_handle in person.get_family_handle_list():
                 family = self._db.get_family_from_handle(family_handle)
                 if self.listchildren:
@@ -583,7 +578,6 @@ class TNGDetDescendantReport(Report):
             self.doc.write_text_citation(text)
 
         self.doc.end_paragraph()
-        print("end")
 
         if self.inc_notes:
             # if the event or event reference has a note attached to it,
@@ -623,6 +617,10 @@ class TNGDetDescendantReport(Report):
                 father_name = ""
                 father_mark = ""
             text = self.__narrator.get_child_string(father_name, mother_name, person.get_gender())
+            relation_type = self.__get_relation_type(family)
+            if relation_type != "Married" and text:
+                text = "Natuurlijke " + text
+
             if text:
                 self.doc.write_text(text)
                 if father_mark:
@@ -645,7 +643,8 @@ class TNGDetDescendantReport(Report):
                 spouse_mark = utils.get_person_mark(self._db, spouse)
             else:
                 spouse_mark = None
-
+            self.doc.end_paragraph()
+            self.doc.start_paragraph("DDR-Entry")
             text = self.__narrator.get_married_string(
                 family, is_first, self._name_display
             )
@@ -661,6 +660,7 @@ class TNGDetDescendantReport(Report):
         """
         Write information about the person's spouse/mate.
         """
+
         if person.get_gender() == Person.MALE:
             mate_handle = family.get_mother_handle()
         else:
@@ -683,24 +683,6 @@ class TNGDetDescendantReport(Report):
             if text:
                 self.doc.write_text_citation(text)
             
-        """
-            self.doc.start_paragraph("DDR-MoreHeader")
-            name = self._name_display.display(mate)
-            if not name:
-                name = self._("Unknown")
-            mark = utils.get_person_mark(self._db, mate)
-            if family.get_relationship() == FamilyRelType.MARRIED:
-                self.doc.write_text(self._("Spouse: %s") % name, mark)
-            else:
-                self.doc.write_text(self._("Relationship with: %s") % name, mark)
-            if name[-1:] != ".":
-                self.doc.write_text(".")
-            self.doc.write_text_citation(self.endnotes(mate))
-            if self.want_ids:
-                self.doc.write_text(" (%s)" % mate.get_gramps_id())
-            self.doc.end_paragraph()
-                       
-        """
     def __get_mate_names(self, family):
         """get the names of the parents in a family"""
         mother_handle = family.get_mother_handle()
@@ -804,11 +786,9 @@ class TNGDetDescendantReport(Report):
             self.doc.write_text_citation(
                 self.__narrator.get_baptised_string()
                 )
-#            self.doc.start_bold()
             self.doc.write_text_citation(
                 self.__narrator.get_witnesses_string()
                 )
-#            self.doc.end_bold()
             # Write Death and/or Burial text only if not probably alive
             if not probably_alive(child, self.database):
                 self.doc.write_text_citation(
@@ -844,7 +824,7 @@ class TNGDetDescendantReport(Report):
 
             self.doc.start_paragraph("DDR-NoteHeader")
             self.doc.write_text(
-                self._("Notes for %(mother_name)s and %(father_name)s:")
+                self._("Notities bij %(mother_name)s and %(father_name)s:")
                 % {"mother_name": mother_name, "father_name": father_name}
             )
             self.doc.end_paragraph()
@@ -967,10 +947,8 @@ class TNGDetDescendantReport(Report):
         notelist = person.get_note_list()
         if len(notelist) > 0 and self.inc_notes:
             self.doc.start_paragraph("DDR-NoteHeader")
-            # feature request 2356: avoid genitive form
-            self.doc.write_text(self._("Notes for %s") % name)
+            self.doc.write_text(self._("Notities bij %s") % name)
             self.doc.end_paragraph()
-            print("end")
             for notehandle in notelist:
                 note = self._db.get_note_from_handle(notehandle)
                 self.doc.write_styled_note(
@@ -1302,7 +1280,7 @@ class TNGDetDescendantOptions(MenuReportOptions):
         default_style.add_paragraph_style("DDR-Title", para)
 
         font = FontStyle()
-        font.set(face=FONT_SANS_SERIF, size=14, italic=1)
+        font.set(face=FONT_SANS_SERIF, size=12, italic=1)
         para = ParagraphStyle()
         para.set_font(font)
         para.set_header_level(2)
@@ -1326,8 +1304,8 @@ class TNGDetDescendantOptions(MenuReportOptions):
         para = ParagraphStyle()
         para.set_font(font)
         para.set(first_indent=-0.75, lmargin=2.25)
-        para.set_top_margin(0.125)
-        para.set_bottom_margin(0.125)
+        para.set_top_margin(0)
+        para.set_bottom_margin(0)
         para.set_description(_("The style used for the text related to the children."))
         default_style.add_paragraph_style("DDR-ChildList", para)
 
@@ -1341,12 +1319,12 @@ class TNGDetDescendantOptions(MenuReportOptions):
         default_style.add_paragraph_style("DDR-Witness", para)
 
         font = FontStyle()
-        font.set(face=FONT_SANS_SERIF, size=10, italic=0, bold=1)
+        font.set(face=FONT_SANS_SERIF, size=10, italic=0, bold=0)
         para = ParagraphStyle()
         para.set_font(font)
         para.set(first_indent=0.0, lmargin=1.5)
         para.set_top_margin(0.25)
-        para.set_bottom_margin(0.25)
+        para.set_bottom_margin(0.1)
         para.set_description(_("The style used for the note header."))
         default_style.add_paragraph_style("DDR-NoteHeader", para)
     
@@ -1362,7 +1340,7 @@ class TNGDetDescendantOptions(MenuReportOptions):
 
         para = ParagraphStyle()
         para.set(lmargin=1.5)
-        para.set_top_margin(0.1)
+        para.set_top_margin(0.0)
         para.set_bottom_margin(0.0)
         para.set_description(_("The basic style used for the text display."))
         default_style.add_paragraph_style("DDR-Entry", para)
@@ -1375,7 +1353,7 @@ class TNGDetDescendantOptions(MenuReportOptions):
         default_style.add_paragraph_style("DDR-First-Entry", para)
 
         font = FontStyle()
-        font.set(size=10, face=FONT_SANS_SERIF, bold=1)
+        font.set(size=10, face=FONT_SANS_SERIF, bold=0)
         para = ParagraphStyle()
         para.set_font(font)
         para.set(first_indent=0.0, lmargin=1.5)
