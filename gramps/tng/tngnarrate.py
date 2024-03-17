@@ -2219,9 +2219,7 @@ class Narrator:
             text = self.__translate_text(text) % value_map
             text = text + " "
         if event.get_description():
-            if text:
-                text += ". "
-            text += event.get_description() + " "
+            text += event.get_description() + "."
         return text
     
     def get_witnesses_string(self):
@@ -2240,7 +2238,7 @@ class Narrator:
                 note = self.__db.get_note_from_handle(notehandle)
                 break
             if note:
-                text = "{Get: " + str(note.get_styledtext()) + "} "
+                text = "{Get.: " + str(note.get_styledtext()) + "} "
                 return text
             else:
                 return None

@@ -343,7 +343,7 @@ class TNGDetDescendantReport(Report):
                     mod_reg_number += 1
 
     def apply_tng_filter_aux(self, person_handle, index, cur_gen=1):
-        """Filter for TNG numbering"""
+        # Filter for TNG numbering
         if (not person_handle) or (cur_gen > self.max_generations):
             return
         self.map[index] = person_handle
@@ -360,11 +360,11 @@ class TNGDetDescendantReport(Report):
             for child_ref in family.get_child_ref_list():
                 _ix = max(self.map)
                 self.apply_tng_filter_aux(child_ref.ref, _ix + 1, cur_gen + 1)
-
+    
     def apply_tng_filter(self, person_handle):
         """TNG preferred"""
         self.apply_mod_reg_filter_aux(person_handle, 1, 1)
-        mod_reg_number = 1
+#
         generatie = 0
         for keys in self.gen_keys:
             generatie = generatie + 1
@@ -374,12 +374,13 @@ class TNGDetDescendantReport(Report):
                 if person_handle not in self.dnumber:
                     volgorde = volgorde + 1
                     self.dnumber[person_handle] = str(utils.roman(generatie).upper()) + "-" + str(volgorde)
-                    mod_reg_number += 1
+#                    mod_reg_number += 1
 
     def write_report(self):
         """
         This function is called by the report system and writes the report.
         """
+        global glb_generation
         if self.numbering == "Henry":
             self.apply_henry_filter(self.center_person.get_handle(), 1, "1")
         elif self.numbering == "Modified Henry":
@@ -413,6 +414,7 @@ class TNGDetDescendantReport(Report):
                     self.doc.page_break()
                 self.doc.start_paragraph("DDR-Generation")
                 text = self._("Generatie %d") % (generation + 1)
+                glb_generation = generation + 1
                 mark = IndexMark(text, INDEX_TYPE_TOC, 2)
                 self.doc.write_text(text, mark)
                 self.doc.end_paragraph()
@@ -787,9 +789,6 @@ class TNGDetDescendantReport(Report):
                     "DDR-ChildList",
                     prefix
                     + str(self.dnumber[child_handle])
-#                    + " "
-#                    + str(cnt)
-#                    + ".",
                 )
             else:
                 self.doc.start_paragraph(
@@ -830,6 +829,7 @@ class TNGDetDescendantReport(Report):
                 # for the first spouse, this is true.
                 # For subsequent spouses, make it false
                 is_first_family = True
+                printed = False
                 for family_handle in family_handle_list:
                     child_family = self.database.get_family_from_handle(family_handle)
                     self.doc.write_text_citation(
@@ -837,10 +837,13 @@ class TNGDetDescendantReport(Report):
                             child_family, is_first_family, self._name_display
                         )
                     )
-                    self.doc.start_bold()
-                    self.doc.write_text_citation(" Zie: " + str(self.dnumber[child_handle]))
-                    self.doc.end_bold()
+                    printed = True
                     is_first_family = False
+                if glb_generation < self.max_generations and printed:
+                    self.doc.start_bold()
+                    self.doc.write_text_citation(chr(10) + "\tZie: " + str(self.dnumber[child_handle]))
+                    self.doc.end_bold()
+                    
             self.doc.end_paragraph()
 
     def __write_family_notes(self, family):
@@ -1351,7 +1354,7 @@ class TNGDetDescendantOptions(MenuReportOptions):
         font.set(face=FONT_SANS_SERIF, size=10, italic=0, bold=0)
         para = ParagraphStyle()
         para.set_font(font)
-        para.set(first_indent=0.0, lmargin=1.5)
+        para.set(first_indent=0.0, lmargin=2.25)
         para.set_top_margin(0.25)
         para.set_bottom_margin(0.1)
         para.set_description(_("The style used for the note header."))
@@ -1361,7 +1364,7 @@ class TNGDetDescendantOptions(MenuReportOptions):
         font.set(face=FONT_SERIF, size=8, italic=0, bold=0)
         para = ParagraphStyle()
         para.set_font(font)
-        para.set(first_indent=0.0, lmargin=1.5)
+        para.set(first_indent=0.0, lmargin=2.25)
         para.set_top_margin(0)
         para.set_bottom_margin(0.0)
         para.set_description(_("The style used for the notes."))
