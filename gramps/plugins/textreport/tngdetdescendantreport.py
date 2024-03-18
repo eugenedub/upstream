@@ -426,6 +426,7 @@ class TNGDetDescendantReport(Report):
                     self.gen_handles[person_handle] = key
                     self.write_person(key)
         elif self.structure == "by lineage":
+            glb_generation = 0
             for key in sorted(self.map):
                 self.write_person(key)
         else:
@@ -839,7 +840,7 @@ class TNGDetDescendantReport(Report):
                     )
                     printed = True
                     is_first_family = False
-                if glb_generation < self.max_generations and printed:
+                if glb_generation < self.max_generations and printed and self.structure == "by generation":
                     self.doc.start_bold()
                     self.doc.write_text_citation(chr(10) + "\tZie: " + str(self.dnumber[child_handle]))
                     self.doc.end_bold()
