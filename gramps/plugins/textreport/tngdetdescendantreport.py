@@ -398,7 +398,7 @@ class TNGDetDescendantReport(Report):
         if not name:
             name = self._("Unknown")
 
-        self.doc.start_paragraph("DDR-Title")
+        self.doc.start_paragraph("TNG-Title")
 
         # feature request 2356: avoid genitive form
         title = self._("Afstammelingen van %(person_name)s") % {"person_name": name}
@@ -412,7 +412,7 @@ class TNGDetDescendantReport(Report):
             for generation, gen_keys in enumerate(self.gen_keys):
                 if self.pgbrk and generation > 0:
                     self.doc.page_break()
-                self.doc.start_paragraph("DDR-Generation")
+                self.doc.start_paragraph("TNG-Generation")
                 text = self._("Generatie %d") % (generation + 1)
                 glb_generation = generation + 1
                 mark = IndexMark(text, INDEX_TYPE_TOC, 2)
@@ -503,7 +503,7 @@ class TNGDetDescendantReport(Report):
         
        # val = utils.roman(generation).upper() + "-"
 
-        self.doc.start_paragraph("DDR-First-Entry", "%s." % val)
+        self.doc.start_paragraph("TNG-First-Entry", "%s." % val)
 
         name = self._name_display.display(person)
         if not name:
@@ -559,7 +559,7 @@ class TNGDetDescendantReport(Report):
 
         place = _pd.display_event(self._db, event, self.place_format)
 
-        self.doc.start_paragraph("DDR-MoreDetails")
+        self.doc.start_paragraph("TNG-MoreDetails")
         print("start 543")
         event_name = self._get_type(event.get_type())
         if date and place:
@@ -619,7 +619,7 @@ class TNGDetDescendantReport(Report):
                 self.doc.write_styled_note(
                     note.get_styledtext(),
                     note.get_format(),
-                    "DDR-MoreDetails",
+                    "TNG-MoreDetails",
                     contains_html=(note.get_type() == NoteType.HTML_CODE),
                 )
 
@@ -672,7 +672,7 @@ class TNGDetDescendantReport(Report):
             else:
                 spouse_mark = None
             self.doc.end_paragraph()
-            self.doc.start_paragraph("DDR-Entry")
+            self.doc.start_paragraph("TNG-Entry")
             text = self.__narrator.get_married_string(
                 family, is_first, self._name_display
             )
@@ -752,7 +752,7 @@ class TNGDetDescendantReport(Report):
 
         relation_type = str(self.__get_relation_type(family))
 
-        self.doc.start_paragraph("DDR-ChildTitle")
+        self.doc.start_paragraph("TNG-ChildTitle")
         if relation_type == "Married":
             children_header = "Uit het huwelijk van " + father_name + " met " + mother_name + ":"
         else:
@@ -787,13 +787,13 @@ class TNGDetDescendantReport(Report):
 
             if child_handle in self.dnumber and self.numbering != "TNG":
                 self.doc.start_paragraph(
-                    "DDR-ChildList",
+                    "TNG-ChildList",
                     prefix
                     + str(self.dnumber[child_handle])
                 )
             else:
                 self.doc.start_paragraph(
-                    "DDR-ChildList", str(cnt) + "."
+                    "TNG-ChildList", str(cnt) + "."
                 )
             cnt += 1
 
@@ -855,7 +855,7 @@ class TNGDetDescendantReport(Report):
         if len(notelist) > 0:
             mother_name, father_name = self.__get_mate_names(family)
 
-            self.doc.start_paragraph("DDR-NoteHeader")
+            self.doc.start_paragraph("TNG-NoteHeader")
             self.doc.write_text(
                 self._("Notities bij %(mother_name)s and %(father_name)s:")
                 % {"mother_name": mother_name, "father_name": father_name}
@@ -864,7 +864,7 @@ class TNGDetDescendantReport(Report):
             for notehandle in notelist:
                 note = self._db.get_note_from_handle(notehandle)
                 self.doc.write_styled_note(
-                    note.get_styledtext(), note.get_format(), "DDR-Note"
+                    note.get_styledtext(), note.get_format(), "TNG-Note"
                 )
 
             
@@ -880,7 +880,7 @@ class TNGDetDescendantReport(Report):
         first = True
         for event_ref in family.get_event_ref_list():
             if first:
-                self.doc.start_paragraph("DDR-MoreHeader")
+                self.doc.start_paragraph("TNG-MoreHeader")
                 self.doc.write_text(
                     self._("More about %(mother_name)s and %(father_name)s:")
                     % {"mother_name": mother_name, "father_name": father_name}
@@ -899,7 +899,7 @@ class TNGDetDescendantReport(Report):
         if first and attrs:
             mother_name, father_name = self.__get_mate_names(family)
 
-            self.doc.start_paragraph("DDR-MoreHeader")
+            self.doc.start_paragraph("TNG-MoreHeader")
             self.doc.write_text(
                 self._("More about %(mother_name)s and %(father_name)s:")
                 % {"mother_name": mother_name, "father_name": father_name}
@@ -908,7 +908,7 @@ class TNGDetDescendantReport(Report):
             print("end")
 
         for attr in attrs:
-            self.doc.start_paragraph("DDR-MoreDetails")
+            self.doc.start_paragraph("TNG-MoreDetails")
             attr_name = self._get_type(attr.get_type())
             text = self._("%(type)s: %(value)s%(endnotes)s") % {
                 "type": self._(attr_name),
@@ -926,12 +926,12 @@ class TNGDetDescendantReport(Report):
                 for notehandle in notelist:
                     note = self._db.get_note_from_handle(notehandle)
                     self.doc.write_styled_note(
-                        note.get_styledtext(), note.get_format(), "DDR-MoreDetails"
+                        note.get_styledtext(), note.get_format(), "TNG-MoreDetails"
                     )
 
     def write_person_info(self, person):
         """write out all the person's information"""
-        self.doc.start_paragraph("DDR-Entry")
+        self.doc.start_paragraph("TNG-Entry")
         name = self._name_display.display(person)
         if not name:
             name = self._("Unknown")
@@ -979,7 +979,7 @@ class TNGDetDescendantReport(Report):
 
         notelist = person.get_note_list()
         if len(notelist) > 0 and self.inc_notes:
-            self.doc.start_paragraph("DDR-NoteHeader")
+            self.doc.start_paragraph("TNG-NoteHeader")
             self.doc.write_text(self._("Notities bij %s") % name)
             self.doc.end_paragraph()
             for notehandle in notelist:
@@ -987,7 +987,7 @@ class TNGDetDescendantReport(Report):
                 self.doc.write_styled_note(
                     note.get_styledtext(),
                     note.get_format(),
-                    "DDR-Note",
+                    "TNG-Note",
                     contains_html=(note.get_type() == NoteType.HTML_CODE),
                 )
 
@@ -995,14 +995,14 @@ class TNGDetDescendantReport(Report):
         if self.inc_names:
             for alt_name in person.get_alternate_names():
                 if first:
-                    self.doc.start_paragraph("DDR-MoreHeader")
+                    self.doc.start_paragraph("TNG-MoreHeader")
                     print("start 1005")
                     self.doc.write_text(
                         self._("More about %(person_name)s:") % {"person_name": name}
                     )
                     self.doc.end_paragraph()
                     first = False
-                self.doc.start_paragraph("DDR-MoreDetails")
+                self.doc.start_paragraph("TNG-MoreDetails")
                 print("start 1012")
                 atype = self._get_type(alt_name.get_type())
                 aname = alt_name.get_regular_name()
@@ -1020,7 +1020,7 @@ class TNGDetDescendantReport(Report):
         if self.inc_events:
             for event_ref in person.get_primary_event_ref_list():
                 if first:
-                    self.doc.start_paragraph("DDR-MoreHeader")
+                    self.doc.start_paragraph("TNG-MoreHeader")
                     print("start 1029")
                     self.doc.write_text(
                         self._("More about %(person_name)s:") % {"person_name": name}
@@ -1034,7 +1034,7 @@ class TNGDetDescendantReport(Report):
         if self.inc_addr:
             for addr in person.get_address_list():
                 if first:
-                    self.doc.start_paragraph("DDR-MoreHeader")
+                    self.doc.start_paragraph("TNG-MoreHeader")
                     print("start 1042")
                     self.doc.write_text(
                         self._("More about %(person_name)s:") % {"person_name": name}
@@ -1042,7 +1042,7 @@ class TNGDetDescendantReport(Report):
                     self.doc.end_paragraph()
                     print("end")
                     first = False
-                self.doc.start_paragraph("DDR-MoreDetails")
+                self.doc.start_paragraph("TNG-MoreDetails")
                 print("start 1049")
 
                 text = utils.get_address_str(addr)
@@ -1063,7 +1063,7 @@ class TNGDetDescendantReport(Report):
         if self.inc_attrs:
             attrs = person.get_attribute_list()
             if first and attrs:
-                self.doc.start_paragraph("DDR-MoreHeader")
+                self.doc.start_paragraph("TNG-MoreHeader")
                 print("start 1070")
                 self.doc.write_text(
                     self._("More about %(person_name)s:") % {"person_name": name}
@@ -1072,7 +1072,7 @@ class TNGDetDescendantReport(Report):
                 first = False
 
             for attr in attrs:
-                self.doc.start_paragraph("DDR-MoreDetails")
+                self.doc.start_paragraph("TNG-MoreDetails")
                 print("start 1079")
                 attr_name = attr.get_type().type2base()
                 # Translators: needed for French, ignore otherwise
@@ -1310,7 +1310,7 @@ class TNGDetDescendantOptions(MenuReportOptions):
         para.set_bottom_margin(0.25)
         para.set_alignment(PARA_ALIGN_CENTER)
         para.set_description(_("The style used for the title."))
-        default_style.add_paragraph_style("DDR-Title", para)
+        default_style.add_paragraph_style("TNG-Title", para)
 
         font = FontStyle()
         font.set(face=FONT_SANS_SERIF, size=12, italic=1)
@@ -1320,7 +1320,7 @@ class TNGDetDescendantOptions(MenuReportOptions):
         para.set_top_margin(0.25)
         para.set_bottom_margin(0.25)
         para.set_description(_("The style used for the generation header."))
-        default_style.add_paragraph_style("DDR-Generation", para)
+        default_style.add_paragraph_style("TNG-Generation", para)
 
         font = FontStyle()
         font.set(size=10)
@@ -1330,7 +1330,7 @@ class TNGDetDescendantOptions(MenuReportOptions):
         para.set_top_margin(0.25)
         para.set_bottom_margin(0)
         para.set_description(_("The style used for the children list title."))
-        default_style.add_paragraph_style("DDR-ChildTitle", para)
+        default_style.add_paragraph_style("TNG-ChildTitle", para)
 
         font = FontStyle()
         font.set(size=10)
@@ -1340,7 +1340,7 @@ class TNGDetDescendantOptions(MenuReportOptions):
         para.set_top_margin(0)
         para.set_bottom_margin(0)
         para.set_description(_("The style used for the text related to the children."))
-        default_style.add_paragraph_style("DDR-ChildList", para)
+        default_style.add_paragraph_style("TNG-ChildList", para)
 
         font = FontStyle()
         font.set(size=10, italic=1)
@@ -1349,7 +1349,7 @@ class TNGDetDescendantOptions(MenuReportOptions):
         para.set_top_margin(0.125)
         para.set_bottom_margin(0.125)
         para.set_description(_("The style used for witnesses in childrens lists."))
-        default_style.add_paragraph_style("DDR-Witness", para)
+        default_style.add_paragraph_style("TNG-Witness", para)
 
         font = FontStyle()
         font.set(face=FONT_SANS_SERIF, size=10, italic=0, bold=0)
@@ -1359,7 +1359,7 @@ class TNGDetDescendantOptions(MenuReportOptions):
         para.set_top_margin(0.25)
         para.set_bottom_margin(0.1)
         para.set_description(_("The style used for the note header."))
-        default_style.add_paragraph_style("DDR-NoteHeader", para)
+        default_style.add_paragraph_style("TNG-NoteHeader", para)
     
         font = FontStyle()
         font.set(face=FONT_SERIF, size=8, italic=0, bold=0)
@@ -1369,21 +1369,21 @@ class TNGDetDescendantOptions(MenuReportOptions):
         para.set_top_margin(0)
         para.set_bottom_margin(0.0)
         para.set_description(_("The style used for the notes."))
-        default_style.add_paragraph_style("DDR-Note", para)
+        default_style.add_paragraph_style("TNG-Note", para)
 
         para = ParagraphStyle()
         para.set(lmargin=1.5)
         para.set_top_margin(0.0)
         para.set_bottom_margin(0.0)
         para.set_description(_("The basic style used for the text display."))
-        default_style.add_paragraph_style("DDR-Entry", para)
+        default_style.add_paragraph_style("TNG-Entry", para)
 
         para = ParagraphStyle()
         para.set(first_indent=-1.5, lmargin=1.5)
         para.set_top_margin(0.25)
         para.set_bottom_margin(0.0)
         para.set_description(_("The style used for first level headings."))
-        default_style.add_paragraph_style("DDR-First-Entry", para)
+        default_style.add_paragraph_style("TNG-First-Entry", para)
 
         font = FontStyle()
         font.set(size=10, face=FONT_SANS_SERIF, bold=0)
@@ -1393,7 +1393,7 @@ class TNGDetDescendantOptions(MenuReportOptions):
         para.set_top_margin(0.25)
         para.set_bottom_margin(0.0)
         para.set_description(_("The style used for second level headings."))
-        default_style.add_paragraph_style("DDR-MoreHeader", para)
+        default_style.add_paragraph_style("TNG-MoreHeader", para)
 
         font = FontStyle()
         font.set(face=FONT_SERIF, size=10)
@@ -1403,6 +1403,6 @@ class TNGDetDescendantOptions(MenuReportOptions):
         para.set_top_margin(0.25)
         para.set_bottom_margin(0.0)
         para.set_description(_("The style used for details."))
-        default_style.add_paragraph_style("DDR-MoreDetails", para)
+        default_style.add_paragraph_style("TNG-MoreDetails", para)
 
         endnotes.add_endnote_styles(default_style)
